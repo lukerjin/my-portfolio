@@ -1,0 +1,53 @@
+.project-detail-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+
+.project-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1d1d1f;
+}
+
+.project-overview p {
+  font-size: 1.05rem;
+  color: #3a3a3c;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.project-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1d1d1f;
+}
+
+.project-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-section ul li {
+  font-size: 1rem;
+  color: #3a3a3c;
+  margin-bottom: 0.6rem;
+}
+
+.back-link {
+  margin-top: 2rem;
+  text-decoration: none;
+  color: #0071e3;
+  font-weight: 500;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
