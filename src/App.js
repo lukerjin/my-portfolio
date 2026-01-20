@@ -1,49 +1,38 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-const projects = [
-  {
-    title: "Project One",
-    description: "A cool project using React and API integration.",
-    link: "https://github.com/<your-username>/project-one"
-  },
-  {
-    title: "Project Two",
-    description: "Another awesome project demonstrating front-end skills.",
-    link: "https://github.com/<your-username>/project-two"
-  },
-  {
-    title: "Project Three",
-    description: "Full-stack app with Node.js backend and React frontend.",
-    link: "https://github.com/<your-username>/project-three"
-  }
-];
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Experience from "./pages/Experience";
+import Education from "./pages/Education";
+import ProjectDetail from "./pages/ProjectDetail";
+import Footer from "./components/Footer";
+import ScrollToTop from './hooks/useScrollToTop';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>My Portfolio</h1>
-        <p>Hi! I'm <strong>Your Name</strong>, a React Developer.</p>
-      </header>
-      <main>
-        <h2>Projects</h2>
-        <div className="projects">
-          {projects.map((p, i) => (
-            <div className="project-card" key={i}>
-              <h3>{p.title}</h3>
-              <p>{p.description}</p>
-              <a href={p.link} target="_blank" rel="noopener noreferrer">
-                View on GitHub
-              </a>
-            </div>
-          ))}
-        </div>
-      </main>
-      <footer>
-        <p>© 2026 Your Name</p>
-      </footer>
-    </div>
+    <Router basename="/my-portfolio">
+      <ScrollToTop></ScrollToTop>
+        <header className="App-header">
+          <nav className="nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/projects">Portfolio Highlights</Link>
+            <Link to="/experience">Experience</Link>
+            <Link to="/education">Education</Link>
+          </nav>
+        </header>
+
+        <main className="app-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/education" element={<Education />} />
+          </Routes>
+        </main>
+        <Footer />
+    </Router>
   );
 }
 
