@@ -14,9 +14,8 @@ export default function AboutMe() {
       <div className="about-content">
         <h2>About Me</h2>
         <p>
-          I'm a full-stack web developer with 10+ years of experience
-          building and modernising production-level web applications. I focus on
-          clean architecture, performance, and maintainable code.
+          I'm a full-stack web developer with 10+ years of experience building and modernising production-level web applications,
+          with a strong passion for vibe coding and building clean, maintainable, and high-performance systems.
         </p>
 
         {/* Tabs */}
@@ -26,7 +25,6 @@ export default function AboutMe() {
               key={tab}
               className={activeTab === tab ? 'active' : ''}
               onClick={() => setActiveTab(tab)}
-              style={{ cursor: 'pointer' }}
             >
               {tab}
             </span>

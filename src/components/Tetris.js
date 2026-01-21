@@ -146,9 +146,9 @@ export default function Tetris() {
   );
 
   return (
-    <>
+    <section className="tetris-section">
       <div className="tetris-banner">
-        <h2>Bored of reading my portfolio? How about playing a quick game of Tetris? Go ahead and try!</h2>
+        <p>Bored of reading my portfolio? How about playing a quick game of Tetris? Go ahead and try!</p>
       </div>
       <div className="tetris-container">
         <h2>Tetris</h2>
@@ -167,6 +167,6 @@ export default function Tetris() {
         </div>
         <p>Controls: W = rotate, A = left, S = down, D = right</p>
       </div>
-    </>
+    </section>
   );
 }

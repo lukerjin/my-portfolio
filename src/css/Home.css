@@ -1,33 +1,66 @@
 /* ===== Home ===== */
 .home {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    /* Consistent spacing between sections */
+    padding: 2rem 0;
 }
 
 /* ===== Hero ===== */
+.hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 1.5rem;
+}
+
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0;
+    color: var(--primary);
 }
 
-.hero-desc {
-    max-width: 620px;
-    font-size: 1.1rem;
-    color: #6e6e73;
-    margin-top: 1rem;
+.hero-name {
+    display: block;
+    margin-bottom: 0.2rem;
 }
 
-/* ===== Typing Effect ===== */
+.hero-role-container {
+    min-height: 2.3em;
+    /* Reserve space for exactly 2 lines of role text if it wraps */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ===== Typing Effect (Minimalist) ===== */
 .animated-role {
-    background: linear-gradient(90deg, #0071e3, #00c6ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent);
+    font-weight: 600;
+    display: inline;
+    /* Changed to inline for natural wrapping within the container */
 }
 
 .cursor {
-    margin-left: 6px;
-    color: #0071e3;
+    display: inline-block;
+    width: 2px;
+    background-color: var(--accent);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }

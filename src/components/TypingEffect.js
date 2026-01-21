@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 const roles = [
-    "Full Stack Developer",
+    "Full-Stack AI Developer",
     "eCommerce System Builder",
+    "UI / UX Designer",
     "Warehouse System Architect",
-    "Senior Frontend Engineer"
+    "Senior Frontend Engineer",
 ];
 
 export default function TypingEffect() {
@@ -12,17 +13,6 @@ export default function TypingEffect() {
     const [index, setIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const speed = 90;
-    const cursorShapes = ["■", "□", "▣", "▤", "▥", "▦"];
-
-    // Random cursor shape on each render or fixed? 
-    // For stability let's just pick one or rotate. 
-    // The original code re-randomized on every render which might cause hydration mismatch or flicker 
-    // if not careful, but basic implementation here.
-    const [cursor, setCursor] = useState("■");
-
-    useEffect(() => {
-        setCursor(cursorShapes[Math.floor(Math.random() * cursorShapes.length)]);
-    }, [text]); // Change cursor when text changes for effect
 
     useEffect(() => {
         const role = roles[index];
@@ -33,7 +23,7 @@ export default function TypingEffect() {
         } else if (isDeleting && text.length > 0) {
             t = setTimeout(() => setText(role.slice(0, text.length - 1)), speed / 2);
         } else if (!isDeleting && text.length === role.length) {
-            t = setTimeout(() => setIsDeleting(true), 1000);
+            t = setTimeout(() => setIsDeleting(true), 2000); // Pause longer at end
         } else if (isDeleting && text.length === 0) {
             setIsDeleting(false);
             setIndex((index + 1) % roles.length);
@@ -43,9 +33,11 @@ export default function TypingEffect() {
 
     return (
         <h1>
-            I'm <strong>Jin Wu</strong><br />
-            <span className="animated-role">{text}</span>
-            <span className="cursor">{cursor}</span>
+            <span className="hero-name">I'm <strong>Jin Wu</strong></span>
+            <div className="hero-role-container">
+                <span className="animated-role">{text}</span>
+                <span className="cursor"></span>
+            </div>
         </h1>
     );
 }
