@@ -7,7 +7,7 @@ import TypingEffect from "../components/TypingEffect";
 import Capabilities from "../components/Capabilities";
 import '../css/Home.css';
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
   useReveal();
 
   return (

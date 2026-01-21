@@ -1,4 +1,15 @@
-const projectDetails = {
+export interface Project {
+    title: string;
+    overview: string;
+    features: string[];
+    tech: string[];
+    contribution: string[];
+    outcome: string[];
+}
+
+export type ProjectDetails = Record<number, Project>;
+
+const projectDetails: ProjectDetails = {
     1: {
         title: "Warehouse Management System",
         overview: `Designed and fully developed a comprehensive Warehouse Management System (WMS) for internal staff operations. This system is fully customised, covering inventory management, order processing, stocktaking, packing, and user workflow management.`,
@@ -97,4 +108,3 @@ const projectDetails = {
 };
 
 export default projectDetails;
-

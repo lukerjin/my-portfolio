@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 
-export default function useReveal() {
+export default function useReveal(): void {
   useEffect(() => {
     const items = document.querySelectorAll(".reveal");
 
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
           }
@@ -15,7 +15,7 @@ export default function useReveal() {
       { threshold: 0.15 }
     );
 
-    items.forEach(el => observer.observe(el));
+    items.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);

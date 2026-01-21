@@ -1,7 +1,7 @@
 import React from "react";
 import '../css/Capabilities.css';
 
-export default function Capabilities() {
+export default function Capabilities(): React.JSX.Element {
     return (
         <section className="capabilities reveal">
             <div className="cap-card">

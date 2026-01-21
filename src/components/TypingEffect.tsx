@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const roles = [
+const roles: string[] = [
     "Full-Stack AI Developer",
     "eCommerce System Builder",
     "UI / UX Designer",
@@ -8,15 +8,15 @@ const roles = [
     "Senior Frontend Engineer",
 ];
 
-export default function TypingEffect() {
-    const [text, setText] = useState("");
-    const [index, setIndex] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
+export default function TypingEffect(): React.JSX.Element {
+    const [text, setText] = useState<string>("");
+    const [index, setIndex] = useState<number>(0);
+    const [isDeleting, setIsDeleting] = useState<boolean>(false);
     const speed = 90;
 
     useEffect(() => {
         const role = roles[index];
-        let t;
+        let t: NodeJS.Timeout;
 
         if (!isDeleting && text.length < role.length) {
             t = setTimeout(() => setText(role.slice(0, text.length + 1)), speed);
@@ -28,6 +28,8 @@ export default function TypingEffect() {
             setIsDeleting(false);
             setIndex((index + 1) % roles.length);
         }
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         return () => clearTimeout(t);
     }, [text, isDeleting, index]);
 

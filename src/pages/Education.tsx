@@ -1,4 +1,6 @@
-export default function Education() {
+import React from 'react';
+
+export default function Education(): React.JSX.Element {
   return (
     <section className="glass-card">
       <h1 className="page-title">Education</h1>

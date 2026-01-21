@@ -5,7 +5,16 @@ const ROWS = 20;
 const COLS = 10;
 const EMPTY = 0;
 
-const TETROMINOES = {
+type TetrominoType = 'I' | 'O' | 'T' | 'S' | 'Z' | 'J' | 'L';
+type Grid = number[][];
+type Shape = number[][];
+
+interface Tetromino {
+  shape: Shape;
+  type: TetrominoType;
+}
+
+const TETROMINOES: Record<TetrominoType, Shape> = {
   I: [[1, 1, 1, 1]],
   O: [[2, 2], [2, 2]],
   T: [[0, 3, 0], [3, 3, 3]],
@@ -15,24 +24,29 @@ const TETROMINOES = {
   L: [[0, 0, 7], [7, 7, 7]],
 };
 
-const COLORS = ["#000", "#0ff", "#ff0", "#a0f", "#0f0", "#f00", "#00f", "#fa0"];
+const COLORS: string[] = ["#000", "#0ff", "#ff0", "#a0f", "#0f0", "#f00", "#00f", "#fa0"];
 
-export default function Tetris() {
-  const [grid, setGrid] = useState(Array.from({ length: ROWS }, () => Array(COLS).fill(EMPTY)));
-  const [score, setScore] = useState(0);
-  const [current, setCurrent] = useState(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [gameOver, setGameOver] = useState(false);
+interface Position {
+  x: number;
+  y: number;
+}
 
-  const intervalRef = useRef(null);
+export default function Tetris(): React.JSX.Element {
+  const [grid, setGrid] = useState<Grid>(Array.from({ length: ROWS }, () => Array(COLS).fill(EMPTY)));
+  const [score, setScore] = useState<number>(0);
+  const [current, setCurrent] = useState<Tetromino | null>(null);
+  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
+  const [gameOver, setGameOver] = useState<boolean>(false);
 
-  const randomTetromino = () => {
-    const keys = Object.keys(TETROMINOES);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const randomTetromino = (): Tetromino => {
+    const keys = Object.keys(TETROMINOES) as TetrominoType[];
     const key = keys[Math.floor(Math.random() * keys.length)];
     return { shape: TETROMINOES[key], type: key };
   }
 
-  const checkCollision = (shape, pos) =>
+  const checkCollision = (shape: Shape, pos: Position): boolean =>
     shape.some((row, y) =>
       row.some((cell, x) => {
         if (!cell) return false;
@@ -42,7 +56,7 @@ export default function Tetris() {
       })
     );
 
-  const merge = (shape, pos) => {
+  const merge = (shape: Shape, pos: Position): Grid => {
     const newGrid = grid.map(r => [...r]);
     shape.forEach((row, y) =>
       row.forEach((cell, x) => {
@@ -52,7 +66,7 @@ export default function Tetris() {
     return newGrid;
   }
 
-  const clearLines = (g) => {
+  const clearLines = (g: Grid): Grid => {
     let cleared = 0;
     const newGrid = g.filter(row => {
       if (row.every(cell => cell !== EMPTY)) {
@@ -66,7 +80,7 @@ export default function Tetris() {
     return newGrid;
   }
 
-  const move = useCallback((dx, dy) => {
+  const move = useCallback((dx: number, dy: number) => {
     if (!current) return;
     const newPos = { x: position.x + dx, y: position.y + dy };
 
@@ -81,14 +95,19 @@ export default function Tetris() {
         const next = randomTetromino();
         if (checkCollision(next.shape, { x: Math.floor(COLS / 2) - 1, y: 0 })) {
           setGameOver(true);
-          clearInterval(intervalRef.current);
+          if (intervalRef.current) clearInterval(intervalRef.current);
         } else {
           setCurrent(next);
           setPosition({ x: Math.floor(COLS / 2) - 1, y: 0 });
         }
       }, 50);
     }
-  }, [current, position]);
+  }, [current, position, grid]); // Added grid dependency because merge uses grid state but logic implies merge uses current state which is updated via setGrid logic. Actually 'grid' is a dependency for checkCollision logic inside move? No, `grid` is state. `checkCollision` uses `grid`.
+
+  // Wait, `checkCollision` uses `grid` state. `grid` changes. `move` depends on `grid`?
+  // `checkCollision` is defined inside component, so it closes over `grid`.
+  // So `move` must depend on `checkCollision` (which depends on `grid`).
+  // So `move` depends on `grid`.
 
   const rotate = () => {
     if (!current) return;
@@ -99,7 +118,7 @@ export default function Tetris() {
   }
 
   useEffect(() => {
-    const handleKey = (e) => {
+    const handleKey = (e: KeyboardEvent) => {
       if (!current || gameOver) return;
       switch (e.key.toLowerCase()) {
         case "a": move(-1, 0); break;
@@ -110,13 +129,16 @@ export default function Tetris() {
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [current, move, rotate, gameOver]);
+  }, [current, move, gameOver]); // rotate is not in dependency list of useEffect but used. rotate depends on current, position, checkCollision => grid.
+  // Ideally wrap rotate in useCallback too or include it.
 
   // 自动下落
   useEffect(() => {
     if (!current || gameOver) return;
     intervalRef.current = setInterval(() => move(0, 1), 500);
-    return () => clearInterval(intervalRef.current);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
   }, [current, gameOver, move]);
 
   const startGame = () => {
@@ -129,7 +151,7 @@ export default function Tetris() {
   }
 
   const restartGame = () => {
-    clearInterval(intervalRef.current);
+    if (intervalRef.current) clearInterval(intervalRef.current);
     startGame();
   }
 

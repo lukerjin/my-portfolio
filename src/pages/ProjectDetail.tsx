@@ -3,9 +3,13 @@ import { useParams, Link } from "react-router-dom";
 import projectDetails from '../data/projectsData';
 import '../css/ProjectDetail.css';
 
-export default function ProjectDetail() {
-  const { id } = useParams();
-  const project = projectDetails[id];
+export default function ProjectDetail(): React.JSX.Element {
+  const { id } = useParams<{ id: string }>();
+  // Ensure id is present and process it
+  // projectDetails is Record<number, Project>
+  // If id is undefined, project will be undefined
+  const projectId = id ? parseInt(id, 10) : -1;
+  const project = projectDetails[projectId];
 
   if (!project) return <p>Project not found. <Link to="/projects">Back to Projects</Link></p>;
 

@@ -2,14 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import '../css/Projects.css';
 
-const projects = [
+interface ProjectSummary {
+  id: number;
+  title: string;
+  short: string;
+}
+
+const projects: ProjectSummary[] = [
   { id: 1, title: "Warehouse Management System", short: "A fully-featured WMS used by staff to manage inventory, picking, packing, and workflow operations efficiently." },
   { id: 2, title: "Frontend Modernisation", short: "Frontend rebuild using Vue 3 + Vite + Astro." },
   { id: 3, title: "Key Frontend Modules", short: "Mega Menu, Subscription workflow, Customer enquiry module, Collections." },
   { id: 4, title: "Shopify Websites", short: "Custom Shopify templates." }
 ];
 
-export default function Projects() {
+export default function Projects(): React.JSX.Element {
   return (
     <>
       <section className="projects-page">

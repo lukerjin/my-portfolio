@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../css/AboutMe.css';
 import CoffeeImg from '../assets/coffee.png';
 
-export default function AboutMe() {
-  const [activeTab, setActiveTab] = useState('Skills');
+export default function AboutMe(): React.JSX.Element {
+  const [activeTab, setActiveTab] = useState<string>('Skills');
 
   return (
     <section className="about">

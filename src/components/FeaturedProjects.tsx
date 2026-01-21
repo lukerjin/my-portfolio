@@ -1,7 +1,15 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import '../css/FeaturedProjects.css';
 
-const featuredProjects = [
+interface FeaturedProject {
+    id: number;
+    title: string;
+    description: string;
+    tags: string[];
+}
+
+const featuredProjects: FeaturedProject[] = [
     {
         id: 1,
         title: "Warehouse Management System",
@@ -28,7 +36,7 @@ const featuredProjects = [
     },
 ];
 
-export default function FeaturedProjects() {
+export default function FeaturedProjects(): React.JSX.Element {
     return (
         <section className="featured reveal">
             <div className="featured-projects-title">

@@ -1,6 +1,7 @@
+import React from 'react';
 import '../css/Footer.css';
 
-export default function Footer() {
+export default function Footer(): React.JSX.Element {
   return (
     <footer className="footer reveal glass-card">
       <h2>Let's Connect</h2>
