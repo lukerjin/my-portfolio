@@ -1,55 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useReveal from "../hooks/useReveal";
 import FeaturedProjects from "../components/FeaturedProjects";
 import AboutMe from "../components/AboutMe";
 import Tetris from "../components/Tetris";
-import { Link } from 'react-router-dom';
-
-const myName = "Jin Wu";
-const roles = [
-  "Full Stack Developer",
-  "eCommerce System Builder",
-  "Warehouse System Architect",
-  "Senior Frontend Engineer"
-];
+import TypingEffect from "../components/TypingEffect";
+import '../css/Home.css';
 
 export default function Home() {
   useReveal();
-
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const speed = 90;
-  const cursorShapes = ["■", "□", "▣", "▤", "▥", "▦"];
-
-  useEffect(() => {
-    const role = roles[index];
-    let t;
-
-    if (!isDeleting && text.length < role.length) {
-      t = setTimeout(() => setText(role.slice(0, text.length + 1)), speed);
-    } else if (isDeleting && text.length > 0) {
-      t = setTimeout(() => setText(role.slice(0, text.length - 1)), speed / 2);
-    } else if (!isDeleting && text.length === role.length) {
-      t = setTimeout(() => setIsDeleting(true), 1000);
-    } else if (isDeleting && text.length === 0) {
-      setIsDeleting(false);
-      setIndex((index + 1) % roles.length);
-    }
-    return () => clearTimeout(t);
-  }, [text, isDeleting, index]);
-
-  const cursor = cursorShapes[Math.floor(Math.random() * cursorShapes.length)];
 
   return (
     <div className="home">
       {/* Hero */}
       <section className="hero reveal">
-        <h1>
-          I'm <strong>{myName}</strong><br />
-          <span className="animated-role">{text}</span>
-          <span className="cursor">{cursor}</span>
-        </h1>
+        <TypingEffect />
         <p className="hero-desc">
           I design and build scalable eCommerce platforms and internal systems used by real businesses.
         </p>

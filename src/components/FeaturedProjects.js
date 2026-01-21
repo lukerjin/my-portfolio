@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../css/FeaturedProjects.css';
 
 const featuredProjects = [
   {
@@ -31,14 +32,14 @@ export default function FeaturedProjects() {
   return (
     <section className="featured reveal">
       <h2 className="featured-projects-title">Portfolio Highlights
-         <Link to={`/projects`} className="btn ghost">
-            View All
-          </Link>
+        <Link to={`/projects`} className="btn ghost">
+          View All
+        </Link>
       </h2>
 
       <div className="featured-scroll">
         {featuredProjects.map((proj) => (
-         <div className="featured-card" key={proj.id}>
+          <div className="featured-card" key={proj.id}>
             <h3>{proj.title}</h3>
             <p>{proj.description}</p>
 

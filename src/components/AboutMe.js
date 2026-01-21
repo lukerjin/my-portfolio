@@ -26,7 +26,7 @@ export default function AboutMe() {
               key={tab}
               className={activeTab === tab ? 'active' : ''}
               onClick={() => setActiveTab(tab)}
-              style={{cursor: 'pointer'}}
+              style={{ cursor: 'pointer' }}
             >
               {tab}
             </span>

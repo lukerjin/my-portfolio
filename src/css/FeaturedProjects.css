@@ -1,0 +1,75 @@
+/* ===== Featured ===== */
+.featured {
+    margin-top: 5rem;
+}
+
+.featured-projects-title {
+    display: flex;
+    align-items: center;
+}
+
+.featured-projects-title .ghost {
+    margin-left: auto;
+    font-size: 16px;
+}
+
+.featured-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.featured-card {
+    min-width: 280px;
+    /* 每张卡片宽度 */
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* 隐藏滚动条 */
+.featured-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.featured-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    /* ⬅ 关键：把 tags + btn 推到底部区域 */
+}
+
+.featured-card .btn {
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.tag {
+    display: inline-block;
+    margin-right: 8px;
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 999px;
+    background: #e8e8ed;
+}
