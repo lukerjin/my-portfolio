@@ -103,6 +103,10 @@ If you have made changes and want to save them to your repository, follow these 
     git push -u origin main
     ```
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## Learn More
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
