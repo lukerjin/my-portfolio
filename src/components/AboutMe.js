@@ -41,6 +41,7 @@ export default function AboutMe() {
             <li><strong>DevOps:</strong> Docker, Git, Jenkins</li>
             <li><strong>UX/UI:</strong> Figma, Wireframing, Prototyping</li>
             <li><strong>AI-Assisted Development Tools:</strong> ChatGPT, Claude, Gemini</li>
+            <li><strong>Vibe Coding:</strong> Antigravity, Codex</li>
           </ul>
         )}
 
