@@ -161,6 +161,31 @@ const projectDetails: ProjectDetails = {
                 caption: "Example runtime output showing symbol-level decisions, gate outcomes, and execution lifecycle reasons rather than simple signal generation alone."
             }
         ]
+    },
+    6: {
+        title: "AI-Assisted Legacy Migration & 0→1 Delivery",
+        overview: "Led a practical AI-assisted engineering workflow across two very different kinds of work: migrating and modernising legacy systems with accumulated technical debt, and accelerating brand-new 0→1 project delivery. The work focused on using AI not as a gimmick, but as an engineering multiplier—speeding up analysis, implementation, validation, and documentation while still keeping architecture, ownership boundaries, and production constraints under human control.",
+        features: [
+            "AI-assisted migration work across older codebases with historical baggage and uneven structure",
+            "0→1 project delivery support using orchestrated AI agents for planning, implementation, and review",
+            "Faster iteration loops for feature design, code generation, debugging, and documentation",
+            "Structured workflows that separated planning, coding, testing, and auditing responsibilities",
+            "Practical use of OpenClaw-style multi-agent orchestration for real engineering work rather than isolated prompts"
+        ],
+        tech: ["OpenClaw", "AI Agent Workflows", "Legacy Migration", "System Design", "Full-Stack Delivery"],
+        contribution: [
+            "Applied AI-assisted workflows to modernise legacy systems without losing control of architecture and system ownership",
+            "Used orchestrated agent roles to break complex work into planning, implementation, testing, and review tracks",
+            "Accelerated 0→1 delivery by reducing iteration time on analysis, coding, debugging, and technical writing",
+            "Kept human judgment focused on architecture direction, quality control, and business-critical decisions",
+            "Turned AI from an ad-hoc coding helper into a repeatable engineering workflow"
+        ],
+        outcome: [
+            "Improved delivery speed on both legacy modernisation and greenfield work",
+            "Reduced manual grind on repetitive analysis, implementation, and documentation tasks",
+            "Created a more structured model for AI-assisted software delivery with clearer role separation",
+            "Demonstrated that AI agents can be used effectively for real migration and product work when paired with strong human technical direction"
+        ]
     }
 };
 

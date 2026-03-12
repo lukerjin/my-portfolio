@@ -36,6 +36,12 @@ const professionalProjects: FeaturedProject[] = [
         description: "Custom Shopify templates.",
         tags: ["Shopify", "HTML/CSS", "Liquid"],
     },
+    {
+        id: 6,
+        title: "AI-Assisted Legacy Migration & 0→1 Delivery",
+        description: "Applied AI-assisted development to both modernise legacy systems and accelerate new product delivery through orchestrated agent workflows.",
+        tags: ["AI Engineering", "Migration", "OpenClaw", "0→1 Delivery"],
+    },
 ];
 
 const personalProjects: FeaturedProject[] = [

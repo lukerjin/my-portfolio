@@ -12,7 +12,8 @@ const professionalProjects: ProjectSummary[] = [
   { id: 1, title: "Warehouse Management System", short: "A fully-featured WMS used by staff to manage inventory, picking, packing, and workflow operations efficiently." },
   { id: 2, title: "Frontend Modernisation", short: "Frontend rebuild using Vue 3 + Vite + Astro." },
   { id: 3, title: "Key Frontend Modules", short: "Mega Menu, Subscription workflow, Customer enquiry module, Collections." },
-  { id: 4, title: "Shopify Websites", short: "Custom Shopify templates." }
+  { id: 4, title: "Shopify Websites", short: "Custom Shopify templates." },
+  { id: 6, title: "AI-Assisted Legacy Migration & 0→1 Delivery", short: "Used AI-assisted engineering to modernise legacy systems and accelerate new project delivery through orchestrated agent workflows and tighter implementation loops." }
 ];
 
 const personalProjects: ProjectSummary[] = [
