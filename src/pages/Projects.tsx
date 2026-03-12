@@ -16,7 +16,7 @@ const professionalProjects: ProjectSummary[] = [
 ];
 
 const personalProjects: ProjectSummary[] = [
-  { id: 5, title: "Quantitative Trading System", short: "Built and iterated on an IBKR-connected quantitative trading system covering research, execution runtime, reconciliation, and operator recovery workflows." }
+  { id: 5, title: "AI-Orchestrated Quant Trading System", short: "Built and evolved an IBKR-connected trading platform while coordinating multiple AI agents through OpenClaw for planning, implementation, testing, debugging, and architecture work." }
 ];
 
 function ProjectGroup({ title, intro, projects }: { title: string; intro: string; projects: ProjectSummary[] }): React.JSX.Element {
@@ -52,7 +52,7 @@ export default function Projects(): React.JSX.Element {
 
         <ProjectGroup
           title="Personal Projects"
-          intro="Independent projects focused on deeper systems thinking, architecture, experimentation, and technical ownership."
+          intro="Independent projects focused on deeper systems thinking, architecture, experimentation, and AI-assisted engineering workflows."
           projects={personalProjects}
         />
       </section>

@@ -106,29 +106,31 @@ const projectDetails: ProjectDetails = {
         ]
     },
     5: {
-        title: "Quantitative Trading System (ai-trader)",
-        overview: "Designed, iterated, and debugged a real IBKR-connected quantitative trading platform spanning strategy research, candidate generation, execution runtime, broker synchronization, reconciliation, and operator recovery. The project evolved beyond simple signal generation into a full trading system problem: separating research from execution, preserving broker-truth correctness, and making complex order lifecycle failures observable and recoverable.",
+        title: "AI-Orchestrated Quantitative Trading System (ai-trader)",
+        overview: "Designed, iterated, and debugged a real IBKR-connected quantitative trading platform spanning strategy research, candidate generation, execution runtime, broker synchronization, reconciliation, and operator recovery. What made the project distinctive was not just the trading stack itself, but the way it was developed: using OpenClaw to coordinate multiple specialized AI agents for planning, implementation, testing, auditing, and architecture synthesis. The project became a practical case study in AI-assisted systems engineering under real operational constraints.",
         features: [
             "IBKR-integrated execution runtime with live account/order/position handling",
             "Research and candidate-generation pipeline separated from execution runtime",
             "Lane-isolated environments for local, ibkr_paper, and ibkr_live",
             "Order lifecycle management including shadow import, reconcile, terminal convergence, and idempotent cancel handling",
-            "Operator-focused observability with audit trails, recovery scripts, and runbook-backed workflows",
+            "OpenClaw-based multi-agent workflow for planner, developer, auditor, and operator-style collaboration",
             "Forward architecture planning for QuantBeacon, a cleaner event-driven successor"
         ],
-        tech: ["Python", "IBKR API", "JSONL/Event Logs", "State Machines", "Runtime Architecture"],
+        tech: ["Python", "IBKR API", "OpenClaw", "Multi-Agent Workflows", "JSONL/Event Logs", "State Machines"],
         contribution: [
             "Drove end-to-end system design across research, execution, reconciliation, and operator tooling",
+            "Designed and refined an AI collaboration workflow using specialized agents for planning, coding, testing, auditing, and documentation",
             "Investigated and fixed deep broker/runtime bugs such as ghost orders, cannot-short failures, conId drift, and cross-client visibility splits",
             "Defined stricter execution contracts around broker truth, desired state vs working state, and symbol-level lifecycle control",
-            "Wrote runbooks and recovery flows to make a complex trading system understandable under real operational pressure",
+            "Wrote runbooks, handoff contracts, and agent skills to make a complex engineering workflow more structured and repeatable",
             "Started the clean-slate successor architecture (QuantBeacon) to reduce legacy complexity and state ambiguity"
         ],
         outcome: [
             "Built a production-style quantitative trading platform around real broker integration rather than toy backtests alone",
             "Turned opaque lifecycle bugs into explicit, diagnosable operational patterns",
+            "Demonstrated a practical AI-assisted engineering workflow with OpenClaw and multiple specialized agents, not just one-off code generation",
             "Established a cleaner architecture direction: broker-truth-first, event-driven, lane-isolated, and operator-friendly",
-            "Demonstrated system-level engineering across planning, debugging, runtime design, and recovery—not just model or strategy code"
+            "Showed system-level engineering across planning, debugging, runtime design, recovery, and AI collaboration"
         ]
     }
 };

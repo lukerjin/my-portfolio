@@ -39,9 +39,9 @@ const professionalProjects: FeaturedProject[] = [
 const personalProjects: FeaturedProject[] = [
     {
         id: 5,
-        title: "Quantitative Trading System",
-        description: "Designed and evolved a real IBKR-connected quantitative trading platform spanning research, execution, reconciliation, and operator recovery.",
-        tags: ["Python", "IBKR API", "Trading Systems", "Architecture"],
+        title: "AI-Orchestrated Quant Trading System",
+        description: "Built a real IBKR-connected trading platform while orchestrating AI agents through OpenClaw for planning, implementation, debugging, and architectural review.",
+        tags: ["OpenClaw", "Multi-Agent", "IBKR API", "Trading Systems"],
     },
 ];
 
