@@ -1,0 +1,825 @@
+{
+  "run_id": "wfa_validate_st_mr_1to5_20260312T014419Z",
+  "generated_at": "2026-03-12T01:52:26Z",
+  "wfa_mode": "train_freeze_test_validate",
+  "params": {
+    "strategy_id": "st_mr_1to5",
+    "strategy_token": "st_mr_1to5",
+    "start": "2021-03-04",
+    "end": "2026-03-04",
+    "period": "2y",
+    "interval": "1d",
+    "train_days": 180,
+    "test_days": 30,
+    "step_days": 90,
+    "top_n": null,
+    "initial_cash": 10000.0,
+    "symbols_count": 243,
+    "cost": {},
+    "logic_params": {},
+    "logic_params_hash": "44136fa355b3678a",
+    "profile_name": "st_mr_1to5",
+    "profile_path": null,
+    "warmup_days": 120
+  },
+  "windows": [
+    {
+      "i": 1,
+      "train": {
+        "start": "2021-03-04",
+        "end": "2021-08-31",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10181.194299754603,
+          "total_return": 0.018119429975460344,
+          "max_drawdown": -0.022383541496206805,
+          "sharpe_ratio": 0.5985103053268851,
+          "trade_count": 16,
+          "win_rate": 0.5,
+          "avg_pnl": 11.649745816192562,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2021-08-31",
+        "end": "2021-09-30",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10467.356161978358,
+          "total_return": 0.04673561619783584,
+          "max_drawdown": -0.017717394087915617,
+          "sharpe_ratio": 2.9535568678453834,
+          "trade_count": 7,
+          "win_rate": 0.7142857142857143,
+          "avg_pnl": 60.834857268158764,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 2,
+      "train": {
+        "start": "2021-06-02",
+        "end": "2021-11-29",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9848.912235090833,
+          "total_return": -0.015108776490916687,
+          "max_drawdown": -0.10693271038224206,
+          "sharpe_ratio": -0.18567430915256156,
+          "trade_count": 70,
+          "win_rate": 0.42857142857142855,
+          "avg_pnl": -2.1583966415595617,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 0.5,
+        "reasons": [
+          "TRADE_COUNT_OK",
+          "DRAWDOWN_HIGH"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2021-11-29",
+        "end": "2021-12-29",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9978.563230539898,
+          "total_return": -0.0021436769460102534,
+          "max_drawdown": -0.0021436769460102534,
+          "sharpe_ratio": -4.615259478723484,
+          "trade_count": 1,
+          "win_rate": 0.0,
+          "avg_pnl": -21.436769460103385,
+          "risk_scale": 0.5
+        }
+      }
+    },
+    {
+      "i": 3,
+      "train": {
+        "start": "2021-08-31",
+        "end": "2022-02-27",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9440.02933303149,
+          "total_return": -0.055997066696850895,
+          "max_drawdown": -0.13083294827660386,
+          "sharpe_ratio": -0.7317999243087021,
+          "trade_count": 70,
+          "win_rate": 0.35714285714285715,
+          "avg_pnl": -7.92284821895,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 0.5,
+        "reasons": [
+          "TRADE_COUNT_OK",
+          "DRAWDOWN_HIGH"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2022-02-27",
+        "end": "2022-03-29",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10000.0,
+          "total_return": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe_ratio": 0.0,
+          "trade_count": 0,
+          "win_rate": 0.0,
+          "avg_pnl": 0.0,
+          "risk_scale": 0.5
+        }
+      }
+    },
+    {
+      "i": 4,
+      "train": {
+        "start": "2021-11-29",
+        "end": "2022-05-28",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9653.855060206883,
+          "total_return": -0.03461449397931171,
+          "max_drawdown": -0.07177385621397647,
+          "sharpe_ratio": -0.5112477420882658,
+          "trade_count": 61,
+          "win_rate": 0.4262295081967213,
+          "avg_pnl": -5.6745072097232745,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2022-05-28",
+        "end": "2022-06-27",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10063.683346350123,
+          "total_return": 0.006368334635012296,
+          "max_drawdown": -0.008459953795328379,
+          "sharpe_ratio": 1.3800073733535543,
+          "trade_count": 1,
+          "win_rate": 0.0,
+          "avg_pnl": -70.01191042710346,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 5,
+      "train": {
+        "start": "2022-02-27",
+        "end": "2022-08-26",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9533.454687540037,
+          "total_return": -0.04665453124599628,
+          "max_drawdown": -0.07234492656674818,
+          "sharpe_ratio": -1.0542851211162783,
+          "trade_count": 45,
+          "win_rate": 0.4222222222222222,
+          "avg_pnl": -9.085809889187495,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2022-08-26",
+        "end": "2022-09-25",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9996.22607935439,
+          "total_return": -0.0003773920645609996,
+          "max_drawdown": -0.013484072284297821,
+          "sharpe_ratio": -0.05542723770800768,
+          "trade_count": 6,
+          "win_rate": 0.5,
+          "avg_pnl": 5.624460930950335,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 6,
+      "train": {
+        "start": "2022-05-28",
+        "end": "2022-11-24",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9874.136888789824,
+          "total_return": -0.012586311121017602,
+          "max_drawdown": -0.06269679950848728,
+          "sharpe_ratio": -0.24216275260734565,
+          "trade_count": 50,
+          "win_rate": 0.5,
+          "avg_pnl": -2.5172622242034053,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2022-11-24",
+        "end": "2022-12-24",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10113.439493411837,
+          "total_return": 0.011343949341183768,
+          "max_drawdown": 0.0,
+          "sharpe_ratio": 4.158007737127979,
+          "trade_count": 2,
+          "win_rate": 1.0,
+          "avg_pnl": 56.71974670591881,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 7,
+      "train": {
+        "start": "2022-08-26",
+        "end": "2023-02-22",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10337.282448717093,
+          "total_return": 0.033728244871709334,
+          "max_drawdown": -0.06511687789950404,
+          "sharpe_ratio": 0.8345867748321725,
+          "trade_count": 73,
+          "win_rate": 0.5068493150684932,
+          "avg_pnl": 3.088496061087339,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2023-02-22",
+        "end": "2023-03-24",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10057.571899402657,
+          "total_return": 0.00575718994026575,
+          "max_drawdown": 0.0,
+          "sharpe_ratio": 3.700450961885572,
+          "trade_count": 1,
+          "win_rate": 1.0,
+          "avg_pnl": 57.5718994026568,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 8,
+      "train": {
+        "start": "2022-11-24",
+        "end": "2023-05-23",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10583.414330726984,
+          "total_return": 0.058341433072698345,
+          "max_drawdown": -0.021706493614063738,
+          "sharpe_ratio": 1.724780063176778,
+          "trade_count": 53,
+          "win_rate": 0.6037735849056604,
+          "avg_pnl": 11.007817560886682,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2023-05-23",
+        "end": "2023-06-22",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10056.884673059778,
+          "total_return": 0.005688467305977829,
+          "max_drawdown": 0.0,
+          "sharpe_ratio": 5.072274941389927,
+          "trade_count": 1,
+          "win_rate": 1.0,
+          "avg_pnl": 56.8846730597774,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 9,
+      "train": {
+        "start": "2023-02-22",
+        "end": "2023-08-21",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 8450.122683503165,
+          "total_return": -0.1549877316496835,
+          "max_drawdown": -0.1966299232947013,
+          "sharpe_ratio": -1.9287392139906727,
+          "trade_count": 42,
+          "win_rate": 0.38095238095238093,
+          "avg_pnl": -37.41543983986709,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 0.5,
+        "reasons": [
+          "TRADE_COUNT_OK",
+          "DRAWDOWN_HIGH"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2023-08-21",
+        "end": "2023-09-20",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10004.833019682486,
+          "total_return": 0.00048330196824863947,
+          "max_drawdown": -0.0040451351646358935,
+          "sharpe_ratio": 0.24287176212879674,
+          "trade_count": 2,
+          "win_rate": 0.5,
+          "avg_pnl": 2.4165098412440855,
+          "risk_scale": 0.5
+        }
+      }
+    },
+    {
+      "i": 10,
+      "train": {
+        "start": "2023-05-23",
+        "end": "2023-11-19",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 8402.468474220257,
+          "total_return": -0.1597531525779743,
+          "max_drawdown": -0.18297735940517168,
+          "sharpe_ratio": -1.9475805912147102,
+          "trade_count": 49,
+          "win_rate": 0.3877551020408163,
+          "avg_pnl": -32.602684199586605,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 0.5,
+        "reasons": [
+          "TRADE_COUNT_OK",
+          "DRAWDOWN_HIGH"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2023-11-19",
+        "end": "2023-12-19",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10000.0,
+          "total_return": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe_ratio": 0.0,
+          "trade_count": 0,
+          "win_rate": 0.0,
+          "avg_pnl": 0.0,
+          "risk_scale": 0.5
+        }
+      }
+    },
+    {
+      "i": 11,
+      "train": {
+        "start": "2023-08-21",
+        "end": "2024-02-17",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9798.99731234932,
+          "total_return": -0.020100268765067986,
+          "max_drawdown": -0.03949000763212418,
+          "sharpe_ratio": -0.674756001622061,
+          "trade_count": 36,
+          "win_rate": 0.5,
+          "avg_pnl": 1.9436950200818126,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2024-02-17",
+        "end": "2024-03-18",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10000.0,
+          "total_return": 0.0,
+          "max_drawdown": 0.0,
+          "sharpe_ratio": 0.0,
+          "trade_count": 0,
+          "win_rate": 0.0,
+          "avg_pnl": 0.0,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 12,
+      "train": {
+        "start": "2023-11-19",
+        "end": "2024-05-17",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9812.359440432938,
+          "total_return": -0.01876405595670616,
+          "max_drawdown": -0.06252100720169385,
+          "sharpe_ratio": -0.45300949707119875,
+          "trade_count": 67,
+          "win_rate": 0.47761194029850745,
+          "avg_pnl": -2.8006053666725013,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2024-05-17",
+        "end": "2024-06-16",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9835.997011860829,
+          "total_return": -0.016400298813917136,
+          "max_drawdown": -0.016400298813917136,
+          "sharpe_ratio": -5.239436005330829,
+          "trade_count": 2,
+          "win_rate": 0.0,
+          "avg_pnl": -68.37692003601538,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 13,
+      "train": {
+        "start": "2024-02-17",
+        "end": "2024-08-15",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10748.191751631153,
+          "total_return": 0.07481917516311531,
+          "max_drawdown": -0.028287929753488483,
+          "sharpe_ratio": 2.099480308190624,
+          "trade_count": 59,
+          "win_rate": 0.559322033898305,
+          "avg_pnl": 12.066092121478485,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2024-08-15",
+        "end": "2024-09-14",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10070.814056208514,
+          "total_return": 0.007081405620851466,
+          "max_drawdown": -0.0009511123270151689,
+          "sharpe_ratio": 4.124765516800933,
+          "trade_count": 3,
+          "win_rate": 0.6666666666666666,
+          "avg_pnl": 23.604685402837816,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 14,
+      "train": {
+        "start": "2024-05-17",
+        "end": "2024-11-13",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10517.646727457148,
+          "total_return": 0.051764672745714835,
+          "max_drawdown": -0.0218899126952794,
+          "sharpe_ratio": 1.8794686209564473,
+          "trade_count": 41,
+          "win_rate": 0.5609756097560976,
+          "avg_pnl": 12.625529937979206,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2024-11-13",
+        "end": "2024-12-13",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10176.237543879186,
+          "total_return": 0.017623754387918522,
+          "max_drawdown": -0.010540789383382765,
+          "sharpe_ratio": 3.0957132947369517,
+          "trade_count": 7,
+          "win_rate": 0.5714285714285714,
+          "avg_pnl": 31.726740133806913,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 15,
+      "train": {
+        "start": "2024-08-15",
+        "end": "2025-02-11",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10168.148844638383,
+          "total_return": 0.016814884463838276,
+          "max_drawdown": -0.039396269334980416,
+          "sharpe_ratio": 0.4402530120386969,
+          "trade_count": 40,
+          "win_rate": 0.425,
+          "avg_pnl": 2.032589823576862,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2025-02-11",
+        "end": "2025-03-13",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9968.20038924887,
+          "total_return": -0.0031799610751129803,
+          "max_drawdown": -0.0031799610751129803,
+          "sharpe_ratio": -4.015128053278189,
+          "trade_count": 1,
+          "win_rate": 0.0,
+          "avg_pnl": -31.799610751129364,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 16,
+      "train": {
+        "start": "2024-11-13",
+        "end": "2025-05-12",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9576.181007531046,
+          "total_return": -0.042381899246895394,
+          "max_drawdown": -0.07465722630280147,
+          "sharpe_ratio": -0.8778285208469904,
+          "trade_count": 52,
+          "win_rate": 0.36538461538461536,
+          "avg_pnl": -8.150365239787686,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2025-05-12",
+        "end": "2025-06-11",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10049.002154724485,
+          "total_return": 0.004900215472448455,
+          "max_drawdown": 0.0,
+          "sharpe_ratio": 3.5496478698597698,
+          "trade_count": 0,
+          "win_rate": 0.0,
+          "avg_pnl": 0.0,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 17,
+      "train": {
+        "start": "2025-02-11",
+        "end": "2025-08-10",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10049.982277054729,
+          "total_return": 0.0049982277054729796,
+          "max_drawdown": -0.026308949332735643,
+          "sharpe_ratio": 0.15895946536289757,
+          "trade_count": 46,
+          "win_rate": 0.5,
+          "avg_pnl": 1.0865712403202297,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2025-08-10",
+        "end": "2025-09-09",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 10024.59611625037,
+          "total_return": 0.0024596116250370503,
+          "max_drawdown": -5.842918926302065e-05,
+          "sharpe_ratio": 3.46212976423965,
+          "trade_count": 1,
+          "win_rate": 1.0,
+          "avg_pnl": 24.596116250369164,
+          "risk_scale": 1.0
+        }
+      }
+    },
+    {
+      "i": 18,
+      "train": {
+        "start": "2025-05-12",
+        "end": "2025-11-08",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9629.343364293165,
+          "total_return": -0.03706566357068353,
+          "max_drawdown": -0.07065910440448153,
+          "sharpe_ratio": -0.9483209810266519,
+          "trade_count": 66,
+          "win_rate": 0.4696969696969697,
+          "avg_pnl": -4.836814463625772,
+          "risk_scale": 1.0
+        }
+      },
+      "freeze": {
+        "enabled": true,
+        "risk_scale": 1.0,
+        "reasons": [
+          "TRADE_COUNT_OK"
+        ],
+        "derived_from": "train"
+      },
+      "test": {
+        "start": "2025-11-08",
+        "end": "2025-12-08",
+        "metrics": {
+          "logic_type": "st_mr_1to5",
+          "initial_cash": 10000.0,
+          "final_equity": 9961.78672135916,
+          "total_return": -0.0038213278640840675,
+          "max_drawdown": -0.00571299876478526,
+          "sharpe_ratio": -2.7155545369184666,
+          "trade_count": 2,
+          "win_rate": 0.5,
+          "avg_pnl": -39.43499113545777,
+          "risk_scale": 1.0
+        }
+      }
+    }
+  ],
+  "enabled_windows_pct": 1.0,
+  "avg_risk_scale": 0.8888888888888888,
+  "overall_train_summary": {
+    "windows": 18,
+    "trade_count_total": 936,
+    "total_return_mean": -0.0188571046279497,
+    "max_drawdown_mean": -0.07203365796196058,
+    "sharpe_ratio_mean": -0.10107589473116316,
+    "win_rate_mean": 0.46508264267417093
+  },
+  "overall_test_summary": {
+    "windows": 18,
+    "trade_count_total": 37,
+    "total_return_mean": 0.004584399429505232,
+    "max_drawdown_mean": -0.0045941012128702385,
+    "sharpe_ratio_mean": 0.838812265411641,
+    "win_rate_mean": 0.414021164021164
+  },
+  "summary_warning": null,
+  "warnings": []
+}
