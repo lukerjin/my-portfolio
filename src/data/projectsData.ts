@@ -190,6 +190,11 @@ const projectDetails: ProjectDetails = {
                 title: "Drawdown Report",
                 url: "/my-portfolio/assets/quant-trading/reports/2026-02-24/baseline/drawdown.html",
                 description: "Drawdown-focused report used to reason about robustness and downside behavior."
+            },
+            {
+                title: "Walk-Forward Validation (WFA) Summary",
+                url: "/my-portfolio/assets/quant-trading/reports/2026-03-12/wfa_validate/wfa_validate_summary.html",
+                description: "Walk-forward validation summary report showing out-of-sample validation behaviour across rolling windows for the 2026-03-12 research run."
             }
         ],
         assets: [
