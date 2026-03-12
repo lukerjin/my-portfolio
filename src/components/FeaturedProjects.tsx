@@ -100,8 +100,8 @@ export default function FeaturedProjects(): React.JSX.Element {
             </div>
 
             <FeaturedRow
-                title="Personal Projects"
-                intro="Independent system design and engineering work driven by architecture, experimentation, technical depth, and AI-assisted collaboration."
+                title="Featured Personal Work"
+                intro="Independent systems and AI-assisted engineering projects driven by architecture, experimentation, technical depth, and personal ownership."
                 projects={personalProjects}
                 variant="flagship"
             />

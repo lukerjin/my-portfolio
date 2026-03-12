@@ -46,8 +46,8 @@ export default function Projects(): React.JSX.Element {
         <h1 className="projects-title">Portfolio Highlights</h1>
 
         <ProjectGroup
-          title="Personal Projects"
-          intro="Independent projects focused on deeper systems thinking, architecture, experimentation, and AI-assisted engineering workflows."
+          title="Featured Personal Work"
+          intro="Independent projects focused on systems thinking, architecture, experimentation, and AI-assisted engineering workflows."
           projects={personalProjects}
         />
 
