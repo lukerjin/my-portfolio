@@ -1,3 +1,5 @@
+import { quantTradingTelegramAsset } from './quantTradingTelegramAsset';
+
 export interface ProjectAsset {
     title: string;
     image: string;
@@ -182,6 +184,11 @@ const projectDetails: ProjectDetails = {
                 image: "/my-portfolio/assets/quant-trading/live-dashboard-part2.png",
                 caption: "Detailed execution visibility including fills, commissions, lifecycle state, and recovery-relevant order information."
             },
+            ...(quantTradingTelegramAsset ? [{
+                title: "Telegram Trading Alerts",
+                image: quantTradingTelegramAsset,
+                caption: "Real-time Telegram notifications used to surface timely buy/sell actions, price updates, and runtime trading context outside the dashboard."
+            }] : []),
             {
                 title: "Runtime Decision Output",
                 image: "/my-portfolio/assets/quant-trading/runtime-output.png",

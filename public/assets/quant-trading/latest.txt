@@ -1,0 +1,9 @@
+total 3824
+-rw-------@ 1 jin  staff       0 Mar 12 12:47 latest.txt
+-rw-------@ 1 jin  staff     128 Mar 12 12:46 _filelist.txt
+-rw-r--r--@ 1 jin  staff  567726 Mar 12 12:44 telegram.png
+drwx------@ 3 jin  staff      96 Mar 12 12:28 reports
+-rw-r--r--@ 1 jin  staff  600441 Mar 12 12:23 live-dashboard-part1.png
+-rw-r--r--@ 1 jin  staff   56062 Mar 12 11:57 discord-openclaw-agents.png
+-rw-r--r--@ 1 jin  staff  381923 Mar 12 11:56 runtime-output.png
+-rw-r--r--@ 1 jin  staff  283900 Mar 12 11:56 live-dashboard-part2.png
