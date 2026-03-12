@@ -9,11 +9,11 @@ interface ProjectSummary {
 }
 
 const professionalProjects: ProjectSummary[] = [
+  { id: 0, title: "AI-Assisted Legacy Migration & 0→1 Delivery", short: "Used AI-assisted engineering to modernise legacy systems and accelerate new project delivery through orchestrated agent workflows and tighter implementation loops." },
   { id: 1, title: "Warehouse Management System", short: "A fully-featured WMS used by staff to manage inventory, picking, packing, and workflow operations efficiently." },
   { id: 2, title: "Frontend Modernisation", short: "Frontend rebuild using Vue 3 + Vite + Astro." },
   { id: 3, title: "Key Frontend Modules", short: "Mega Menu, Subscription workflow, Customer enquiry module, Collections." },
   { id: 4, title: "Shopify Websites", short: "Custom Shopify templates." },
-  { id: 6, title: "AI-Assisted Legacy Migration & 0→1 Delivery", short: "Used AI-assisted engineering to modernise legacy systems and accelerate new project delivery through orchestrated agent workflows and tighter implementation loops." }
 ];
 
 const personalProjects: ProjectSummary[] = [
@@ -46,15 +46,15 @@ export default function Projects(): React.JSX.Element {
         <h1 className="projects-title">Portfolio Highlights</h1>
 
         <ProjectGroup
-          title="Professional Projects"
-          intro="Commercial work delivered for real businesses, internal operations, and customer-facing platforms."
-          projects={professionalProjects}
-        />
-
-        <ProjectGroup
           title="Personal Projects"
           intro="Independent projects focused on deeper systems thinking, architecture, experimentation, and AI-assisted engineering workflows."
           projects={personalProjects}
+        />
+
+        <ProjectGroup
+          title="Professional Projects"
+          intro="Commercial work delivered for real businesses, internal operations, and customer-facing platforms."
+          projects={professionalProjects}
         />
       </section>
     </>

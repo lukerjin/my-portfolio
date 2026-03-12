@@ -13,6 +13,12 @@ interface FeaturedProject {
 
 const professionalProjects: FeaturedProject[] = [
     {
+        id: 0,
+        title: "AI-Assisted Legacy Migration & 0→1 Delivery",
+        description: "Applied AI-assisted development to both modernise legacy systems and accelerate new product delivery through orchestrated agent workflows.",
+        tags: ["AI Engineering", "Migration", "OpenClaw", "0→1 Delivery"],
+    },
+    {
         id: 1,
         title: "Warehouse Management System",
         description: "A fully-featured WMS.",
@@ -35,12 +41,6 @@ const professionalProjects: FeaturedProject[] = [
         title: "Shopify Websites",
         description: "Custom Shopify templates.",
         tags: ["Shopify", "HTML/CSS", "Liquid"],
-    },
-    {
-        id: 6,
-        title: "AI-Assisted Legacy Migration & 0→1 Delivery",
-        description: "Applied AI-assisted development to both modernise legacy systems and accelerate new product delivery through orchestrated agent workflows.",
-        tags: ["AI Engineering", "Migration", "OpenClaw", "0→1 Delivery"],
     },
 ];
 
@@ -100,16 +100,16 @@ export default function FeaturedProjects(): React.JSX.Element {
             </div>
 
             <FeaturedRow
-                title="Professional Projects"
-                intro="Selected company-facing systems, storefront work, and internal platforms built for real business operations."
-                projects={professionalProjects}
-            />
-
-            <FeaturedRow
                 title="Personal Projects"
                 intro="Independent system design and engineering work driven by architecture, experimentation, technical depth, and AI-assisted collaboration."
                 projects={personalProjects}
                 variant="flagship"
+            />
+
+            <FeaturedRow
+                title="Professional Projects"
+                intro="Selected company-facing systems, storefront work, and internal platforms built for real business operations."
+                projects={professionalProjects}
             />
         </section>
     );
