@@ -1,3 +1,9 @@
+export interface ProjectAsset {
+    title: string;
+    image: string;
+    caption: string;
+}
+
 export interface Project {
     title: string;
     overview: string;
@@ -5,6 +11,7 @@ export interface Project {
     tech: string[];
     contribution: string[];
     outcome: string[];
+    assets?: ProjectAsset[];
 }
 
 export type ProjectDetails = Record<number, Project>;
@@ -106,7 +113,7 @@ const projectDetails: ProjectDetails = {
         ]
     },
     5: {
-        title: "AI-Orchestrated Quantitative Trading System (ai-trader)",
+        title: "AI-Orchestrated Quantitative Trading System",
         overview: "Designed, iterated, and debugged a real IBKR-connected quantitative trading platform spanning strategy research, candidate generation, execution runtime, broker synchronization, reconciliation, and operator recovery. What made the project distinctive was not just the trading stack itself, but the way it was developed: using OpenClaw to coordinate multiple specialized AI agents for planning, implementation, testing, auditing, and architecture synthesis. The project became a practical case study in AI-assisted systems engineering under real operational constraints.",
         features: [
             "IBKR-integrated execution runtime with live account/order/position handling",
@@ -131,6 +138,28 @@ const projectDetails: ProjectDetails = {
             "Demonstrated a practical AI-assisted engineering workflow with OpenClaw and multiple specialized agents, not just one-off code generation",
             "Established a cleaner architecture direction: broker-truth-first, event-driven, lane-isolated, and operator-friendly",
             "Showed system-level engineering across planning, debugging, runtime design, recovery, and AI collaboration"
+        ],
+        assets: [
+            {
+                title: "OpenClaw Multi-Agent Workflow",
+                image: "/my-portfolio/assets/quant-trading/discord-openclaw-agents.png",
+                caption: "A real multi-agent workflow coordinated through OpenClaw, with specialized agents for planning, implementation, auditing, and operational support."
+            },
+            {
+                title: "Live Trading Dashboard — Overview",
+                image: "/my-portfolio/assets/quant-trading/live-dashboard-part1.png",
+                caption: "Operator-facing live dashboard showing account health, open positions, pending orders, and lifecycle state in a broker-connected environment."
+            },
+            {
+                title: "Live Trading Dashboard — Execution Detail",
+                image: "/my-portfolio/assets/quant-trading/live-dashboard-part2.png",
+                caption: "Detailed execution visibility including fills, commissions, lifecycle state, and recovery-relevant order information."
+            },
+            {
+                title: "Runtime Decision Output",
+                image: "/my-portfolio/assets/quant-trading/runtime-output.png",
+                caption: "Example runtime output showing symbol-level decisions, gate outcomes, and execution lifecycle reasons rather than simple signal generation alone."
+            }
         ]
     }
 };

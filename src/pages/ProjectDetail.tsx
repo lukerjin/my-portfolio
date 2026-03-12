@@ -34,6 +34,23 @@ export default function ProjectDetail(): React.JSX.Element {
         <ul>{project.tech.map((t, i) => <li key={i}>{t}</li>)}</ul>
       </section>
 
+      {project.assets && project.assets.length > 0 ? (
+        <section className="project-section project-assets-section">
+          <h2>Selected Screens & Workflow</h2>
+          <div className="project-assets-grid">
+            {project.assets.map((asset, i) => (
+              <figure className="project-asset-card" key={`${asset.title}-${i}`}>
+                <img src={asset.image} alt={asset.title} className="project-asset-image" />
+                <figcaption className="project-asset-caption">
+                  <strong>{asset.title}</strong>
+                  <span>{asset.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="project-section">
         <h2>My Contributions</h2>
         <ul>{project.contribution.map((c, i) => <li key={i}>{c}</li>)}</ul>
