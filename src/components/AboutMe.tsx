@@ -38,8 +38,8 @@ export default function AboutMe(): React.JSX.Element {
             <li><strong>Back-End:</strong> Node.js, Python, PHP (Laravel), MySQL, PostgreSQL</li>
             <li><strong>DevOps:</strong> Docker, Git, Jenkins</li>
             <li><strong>UX/UI:</strong> Figma, Wireframing, Prototyping</li>
-            <li><strong>AI-Assisted Development Tools:</strong> ChatGPT, Claude, Gemini</li>
-            <li><strong>Vibe Coding:</strong> Antigravity, Codex</li>
+            <li><strong>AI-Assisted Development Tools:</strong> ChatGPT, Claude, Gemini, Cursor</li>
+            <li><strong>Vibe Coding:</strong> OpenClaw, Antigravity, Codex </li>
           </ul>
         )}
 
