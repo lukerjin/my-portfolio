@@ -34,6 +34,12 @@ const featuredProjects: FeaturedProject[] = [
         description: "Custom Shopify templates.",
         tags: ["Shopify", "HTML/CSS", "Liquid"],
     },
+    {
+        id: 5,
+        title: "Quantitative Trading System",
+        description: "Designed and evolved a real IBKR-connected quantitative trading platform spanning research, execution, reconciliation, and operator recovery.",
+        tags: ["Python", "IBKR API", "Trading Systems", "Architecture"],
+    },
 ];
 
 export default function FeaturedProjects(): React.JSX.Element {

@@ -104,6 +104,32 @@ const projectDetails: ProjectDetails = {
             "Enhanced customer engagement",
             "Efficient backend management"
         ]
+    },
+    5: {
+        title: "Quantitative Trading System (ai-trader)",
+        overview: "Designed, iterated, and debugged a real IBKR-connected quantitative trading platform spanning strategy research, candidate generation, execution runtime, broker synchronization, reconciliation, and operator recovery. The project evolved beyond simple signal generation into a full trading system problem: separating research from execution, preserving broker-truth correctness, and making complex order lifecycle failures observable and recoverable.",
+        features: [
+            "IBKR-integrated execution runtime with live account/order/position handling",
+            "Research and candidate-generation pipeline separated from execution runtime",
+            "Lane-isolated environments for local, ibkr_paper, and ibkr_live",
+            "Order lifecycle management including shadow import, reconcile, terminal convergence, and idempotent cancel handling",
+            "Operator-focused observability with audit trails, recovery scripts, and runbook-backed workflows",
+            "Forward architecture planning for QuantBeacon, a cleaner event-driven successor"
+        ],
+        tech: ["Python", "IBKR API", "JSONL/Event Logs", "State Machines", "Runtime Architecture"],
+        contribution: [
+            "Drove end-to-end system design across research, execution, reconciliation, and operator tooling",
+            "Investigated and fixed deep broker/runtime bugs such as ghost orders, cannot-short failures, conId drift, and cross-client visibility splits",
+            "Defined stricter execution contracts around broker truth, desired state vs working state, and symbol-level lifecycle control",
+            "Wrote runbooks and recovery flows to make a complex trading system understandable under real operational pressure",
+            "Started the clean-slate successor architecture (QuantBeacon) to reduce legacy complexity and state ambiguity"
+        ],
+        outcome: [
+            "Built a production-style quantitative trading platform around real broker integration rather than toy backtests alone",
+            "Turned opaque lifecycle bugs into explicit, diagnosable operational patterns",
+            "Established a cleaner architecture direction: broker-truth-first, event-driven, lane-isolated, and operator-friendly",
+            "Demonstrated system-level engineering across planning, debugging, runtime design, and recovery—not just model or strategy code"
+        ]
     }
 };
 
