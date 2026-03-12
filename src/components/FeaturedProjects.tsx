@@ -9,7 +9,7 @@ interface FeaturedProject {
     tags: string[];
 }
 
-const featuredProjects: FeaturedProject[] = [
+const professionalProjects: FeaturedProject[] = [
     {
         id: 1,
         title: "Warehouse Management System",
@@ -34,6 +34,9 @@ const featuredProjects: FeaturedProject[] = [
         description: "Custom Shopify templates.",
         tags: ["Shopify", "HTML/CSS", "Liquid"],
     },
+];
+
+const personalProjects: FeaturedProject[] = [
     {
         id: 5,
         title: "Quantitative Trading System",
@@ -42,18 +45,16 @@ const featuredProjects: FeaturedProject[] = [
     },
 ];
 
-export default function FeaturedProjects(): React.JSX.Element {
+function FeaturedRow({ title, intro, projects }: { title: string; intro: string; projects: FeaturedProject[] }): React.JSX.Element {
     return (
-        <section className="featured reveal">
-            <div className="featured-projects-title">
-                <h2>Portfolio Highlights</h2>
-                <Link to={`/projects`} className="btn ghost">
-                    View All
-                </Link>
+        <div className="featured-group">
+            <div className="featured-group-header">
+                <h3>{title}</h3>
+                <p>{intro}</p>
             </div>
 
             <div className="featured-scroll">
-                {featuredProjects.map((proj) => (
+                {projects.map((proj) => (
                     <div className="featured-card" key={proj.id}>
                         <h3>{proj.title}</h3>
                         <p>{proj.description}</p>
@@ -70,6 +71,31 @@ export default function FeaturedProjects(): React.JSX.Element {
                     </div>
                 ))}
             </div>
+        </div>
+    );
+}
+
+export default function FeaturedProjects(): React.JSX.Element {
+    return (
+        <section className="featured reveal">
+            <div className="featured-projects-title">
+                <h2>Portfolio Highlights</h2>
+                <Link to={`/projects`} className="btn ghost">
+                    View All
+                </Link>
+            </div>
+
+            <FeaturedRow
+                title="Professional Projects"
+                intro="Selected company-facing systems, storefront work, and internal platforms built for real business operations."
+                projects={professionalProjects}
+            />
+
+            <FeaturedRow
+                title="Personal Projects"
+                intro="Independent system design and engineering work driven by architecture, experimentation, and technical depth."
+                projects={personalProjects}
+            />
         </section>
     );
 }
