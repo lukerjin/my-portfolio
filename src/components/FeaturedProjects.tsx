@@ -7,6 +7,8 @@ interface FeaturedProject {
     title: string;
     description: string;
     tags: string[];
+    badge?: string;
+    kicker?: string;
 }
 
 const professionalProjects: FeaturedProject[] = [
@@ -40,12 +42,14 @@ const personalProjects: FeaturedProject[] = [
     {
         id: 5,
         title: "AI-Orchestrated Quant Trading System",
-        description: "Built a real IBKR-connected trading platform while orchestrating AI agents through OpenClaw for planning, implementation, debugging, and architectural review.",
+        kicker: "Personal flagship project",
+        badge: "OpenClaw x Multi-Agent",
+        description: "Built a real IBKR-connected trading platform while orchestrating AI agents through OpenClaw for planning, implementation, debugging, architecture design, and system review.",
         tags: ["OpenClaw", "Multi-Agent", "IBKR API", "Trading Systems"],
     },
 ];
 
-function FeaturedRow({ title, intro, projects }: { title: string; intro: string; projects: FeaturedProject[] }): React.JSX.Element {
+function FeaturedRow({ title, intro, projects, variant = "default" }: { title: string; intro: string; projects: FeaturedProject[]; variant?: "default" | "flagship" }): React.JSX.Element {
     return (
         <div className="featured-group">
             <div className="featured-group-header">
@@ -53,10 +57,14 @@ function FeaturedRow({ title, intro, projects }: { title: string; intro: string;
                 <p>{intro}</p>
             </div>
 
-            <div className="featured-scroll">
+            <div className={variant === "flagship" ? "featured-flagship-grid" : "featured-scroll"}>
                 {projects.map((proj) => (
-                    <div className="featured-card" key={proj.id}>
-                        <h3>{proj.title}</h3>
+                    <div className={`featured-card ${variant === "flagship" ? "featured-card--flagship" : ""}`.trim()} key={proj.id}>
+                        {proj.kicker ? <div className="featured-kicker">{proj.kicker}</div> : null}
+                        <div className="featured-card-header">
+                            <h3>{proj.title}</h3>
+                            {proj.badge ? <span className="featured-badge">{proj.badge}</span> : null}
+                        </div>
                         <p>{proj.description}</p>
 
                         <div className="tags">
@@ -93,8 +101,9 @@ export default function FeaturedProjects(): React.JSX.Element {
 
             <FeaturedRow
                 title="Personal Projects"
-                intro="Independent system design and engineering work driven by architecture, experimentation, and technical depth."
+                intro="Independent system design and engineering work driven by architecture, experimentation, technical depth, and AI-assisted collaboration."
                 projects={personalProjects}
+                variant="flagship"
             />
         </section>
     );
