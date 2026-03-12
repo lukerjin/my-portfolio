@@ -1,17 +1,14 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import projectDetails from '../data/projectsData';
 import '../css/ProjectDetail.css';
 
 export default function ProjectDetail(): React.JSX.Element {
   const { id } = useParams<{ id: string }>();
-  // Ensure id is present and process it
-  // projectDetails is Record<number, Project>
-  // If id is undefined, project will be undefined
   const projectId = id ? parseInt(id, 10) : -1;
-  const project = projectDetails[projectId];
+  const project = Number.isInteger(projectId) ? projectDetails[projectId] : undefined;
 
-  if (!project) return <p>Project not found. <Link to="/projects">Back to Projects</Link></p>;
+  if (!project) return <Navigate to="/projects" replace />;
 
   return (
     <div className="project-detail-page">
@@ -33,6 +30,43 @@ export default function ProjectDetail(): React.JSX.Element {
         <h2>Tech Stack</h2>
         <ul>{project.tech.map((t, i) => <li key={i}>{t}</li>)}</ul>
       </section>
+
+      {project.links && project.links.length > 0 ? (
+        <section className="project-section project-links-section">
+          <h2>Research, Validation & Reports</h2>
+          <div className="project-links-list">
+            {project.links.map((link, i) => (
+              <a
+                key={`${link.title}-${i}`}
+                href={link.url}
+                className="project-link-card"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <strong>{link.title}</strong>
+                <span>{link.description}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {project.assets && project.assets.length > 0 ? (
+        <section className="project-section project-assets-section">
+          <h2>Selected Screens & Workflow</h2>
+          <div className="project-assets-grid">
+            {project.assets.map((asset, i) => (
+              <figure className="project-asset-card" key={`${asset.title}-${i}`}>
+                <img src={asset.image} alt={asset.title} className="project-asset-image" />
+                <figcaption className="project-asset-caption">
+                  <strong>{asset.title}</strong>
+                  <span>{asset.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="project-section">
         <h2>My Contributions</h2>

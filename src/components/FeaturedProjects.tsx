@@ -7,9 +7,17 @@ interface FeaturedProject {
     title: string;
     description: string;
     tags: string[];
+    badge?: string;
+    kicker?: string;
 }
 
-const featuredProjects: FeaturedProject[] = [
+const professionalProjects: FeaturedProject[] = [
+    {
+        id: 0,
+        title: "AI-Assisted Legacy Migration & 0→1 Delivery",
+        description: "Applied AI-assisted development to both modernise legacy systems and accelerate new product delivery through orchestrated agent workflows.",
+        tags: ["AI Engineering", "Migration", "OpenClaw", "0→1 Delivery"],
+    },
     {
         id: 1,
         title: "Warehouse Management System",
@@ -36,20 +44,33 @@ const featuredProjects: FeaturedProject[] = [
     },
 ];
 
-export default function FeaturedProjects(): React.JSX.Element {
+const personalProjects: FeaturedProject[] = [
+    {
+        id: 5,
+        title: "AI-Orchestrated Quant Trading System",
+        kicker: "Personal flagship project",
+        badge: "OpenClaw x Multi-Agent",
+        description: "Built a real IBKR-connected trading platform while orchestrating AI agents through OpenClaw for planning, implementation, debugging, architecture design, and system review.",
+        tags: ["OpenClaw", "Multi-Agent", "IBKR API", "Trading Systems"],
+    },
+];
+
+function FeaturedRow({ title, intro, projects, variant = "default" }: { title: string; intro: string; projects: FeaturedProject[]; variant?: "default" | "flagship" }): React.JSX.Element {
     return (
-        <section className="featured reveal">
-            <div className="featured-projects-title">
-                <h2>Portfolio Highlights</h2>
-                <Link to={`/projects`} className="btn ghost">
-                    View All
-                </Link>
+        <div className="featured-group">
+            <div className="featured-group-header">
+                <h3>{title}</h3>
+                <p>{intro}</p>
             </div>
 
-            <div className="featured-scroll">
-                {featuredProjects.map((proj) => (
-                    <div className="featured-card" key={proj.id}>
-                        <h3>{proj.title}</h3>
+            <div className={variant === "flagship" ? "featured-flagship-grid" : "featured-scroll"}>
+                {projects.map((proj) => (
+                    <div className={`featured-card ${variant === "flagship" ? "featured-card--flagship" : ""}`.trim()} key={proj.id}>
+                        {proj.kicker ? <div className="featured-kicker">{proj.kicker}</div> : null}
+                        <div className="featured-card-header">
+                            <h3>{proj.title}</h3>
+                            {proj.badge ? <span className="featured-badge">{proj.badge}</span> : null}
+                        </div>
                         <p>{proj.description}</p>
 
                         <div className="tags">
@@ -64,6 +85,32 @@ export default function FeaturedProjects(): React.JSX.Element {
                     </div>
                 ))}
             </div>
+        </div>
+    );
+}
+
+export default function FeaturedProjects(): React.JSX.Element {
+    return (
+        <section className="featured reveal">
+            <div className="featured-projects-title">
+                <h2>Portfolio Highlights</h2>
+                <Link to={`/projects`} className="btn ghost">
+                    View All
+                </Link>
+            </div>
+
+            <FeaturedRow
+                title="Featured Personal Work"
+                intro="Independent systems and AI-assisted engineering projects driven by architecture, experimentation, technical depth, and personal ownership."
+                projects={personalProjects}
+                variant="flagship"
+            />
+
+            <FeaturedRow
+                title="Professional Projects"
+                intro="Selected company-facing systems, storefront work, and internal platforms built for real business operations."
+                projects={professionalProjects}
+            />
         </section>
     );
 }
