@@ -42,8 +42,45 @@
   margin-bottom: 0.6rem;
 }
 
+.project-links-section,
 .project-assets-section {
   width: 100%;
+}
+
+.project-links-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.project-link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 14px 32px -18px rgba(0, 0, 0, 0.18);
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.project-link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px -18px rgba(0, 0, 0, 0.22);
+}
+
+.project-link-card strong {
+  color: #0071e3;
+}
+
+.project-link-card span {
+  color: #52525b;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .project-assets-grid {

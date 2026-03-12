@@ -4,6 +4,12 @@ export interface ProjectAsset {
     caption: string;
 }
 
+export interface ProjectLink {
+    title: string;
+    url: string;
+    description: string;
+}
+
 export interface Project {
     title: string;
     overview: string;
@@ -12,6 +18,7 @@ export interface Project {
     contribution: string[];
     outcome: string[];
     assets?: ProjectAsset[];
+    links?: ProjectLink[];
 }
 
 export type ProjectDetails = Record<number, Project>;
@@ -118,15 +125,18 @@ const projectDetails: ProjectDetails = {
         features: [
             "IBKR-integrated execution runtime with live account/order/position handling",
             "Research and candidate-generation pipeline separated from execution runtime",
+            "Walk-forward analysis, offline backtesting, and QuantStats-based report generation for strategy evaluation",
+            "Robustness and regime-aware thinking across strategy research, execution behavior, and architecture evolution",
             "Lane-isolated environments for local, ibkr_paper, and ibkr_live",
             "Order lifecycle management including shadow import, reconcile, terminal convergence, and idempotent cancel handling",
             "OpenClaw-based multi-agent workflow for planner, developer, auditor, and operator-style collaboration",
             "Forward architecture planning for QuantBeacon, a cleaner event-driven successor"
         ],
-        tech: ["Python", "IBKR API", "OpenClaw", "Multi-Agent Workflows", "JSONL/Event Logs", "State Machines"],
+        tech: ["Python", "IBKR API", "OpenClaw", "Multi-Agent Workflows", "QuantStats", "State Machines"],
         contribution: [
             "Drove end-to-end system design across research, execution, reconciliation, and operator tooling",
-            "Designed and refined an AI collaboration workflow using specialized agents for planning, coding, testing, auditing, and documentation",
+            "Built and used research validation flows including backtesting, walk-forward analysis, and report generation to assess strategy behavior beyond simple point-in-time results",
+            "Designed and refined an AI collaboration workflow using specialized agents for planning, coding, testing, and review",
             "Investigated and fixed deep broker/runtime bugs such as ghost orders, cannot-short failures, conId drift, and cross-client visibility splits",
             "Defined stricter execution contracts around broker truth, desired state vs working state, and symbol-level lifecycle control",
             "Wrote runbooks, handoff contracts, and agent skills to make a complex engineering workflow more structured and repeatable",
@@ -138,6 +148,23 @@ const projectDetails: ProjectDetails = {
             "Demonstrated a practical AI-assisted engineering workflow with OpenClaw and multiple specialized agents, not just one-off code generation",
             "Established a cleaner architecture direction: broker-truth-first, event-driven, lane-isolated, and operator-friendly",
             "Showed system-level engineering across planning, debugging, runtime design, recovery, and AI collaboration"
+        ],
+        links: [
+            {
+                title: "QuantStats Baseline Report",
+                url: "/my-portfolio/assets/quant-trading/reports/2026-02-24/baseline/quantstats.html",
+                description: "Example offline baseline tearsheet showing backtesting output, risk metrics, and performance breakdown from the strategy research workflow."
+            },
+            {
+                title: "Equity Curve Report",
+                url: "/my-portfolio/assets/quant-trading/reports/2026-02-24/baseline/equity_curve.html",
+                description: "Companion report focused on equity curve behavior for the same offline baseline run."
+            },
+            {
+                title: "Drawdown Report",
+                url: "/my-portfolio/assets/quant-trading/reports/2026-02-24/baseline/drawdown.html",
+                description: "Drawdown-focused report used to reason about robustness and downside behavior."
+            }
         ],
         assets: [
             {

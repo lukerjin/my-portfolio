@@ -31,6 +31,26 @@ export default function ProjectDetail(): React.JSX.Element {
         <ul>{project.tech.map((t, i) => <li key={i}>{t}</li>)}</ul>
       </section>
 
+      {project.links && project.links.length > 0 ? (
+        <section className="project-section project-links-section">
+          <h2>Research, Validation & Reports</h2>
+          <div className="project-links-list">
+            {project.links.map((link, i) => (
+              <a
+                key={`${link.title}-${i}`}
+                href={link.url}
+                className="project-link-card"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <strong>{link.title}</strong>
+                <span>{link.description}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {project.assets && project.assets.length > 0 ? (
         <section className="project-section project-assets-section">
           <h2>Selected Screens & Workflow</h2>
