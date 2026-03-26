@@ -14,33 +14,39 @@ interface FeaturedProject {
 const professionalProjects: FeaturedProject[] = [
     {
         id: 0,
-        title: "AI-Assisted Legacy Migration & 0→1 Delivery",
-        description: "Applied AI-assisted development to both modernise legacy systems and accelerate new product delivery through orchestrated agent workflows.",
-        tags: ["AI Engineering", "Migration", "OpenClaw", "0→1 Delivery"],
+        title: "AI-Assisted Testing & Debugging Workflows",
+        description: "Built AI-assisted engineering workflows for issue detection, root-cause analysis, fix iteration, and structured validation across UI, backend, and database layers.",
+        tags: ["AI Engineering", "Testing", "Debugging", "Validation"],
     },
     {
         id: 1,
         title: "Warehouse Management System",
-        description: "A fully-featured WMS.",
-        tags: ["Angular", "Vue 2", "Laravel", "MySQL"],
+        description: "Designed and built a custom internal WMS covering labelling, picking, shipping, inventory, and staff workflows for day-to-day operations.",
+        tags: ["Operational Systems", "Vue", "Laravel", "Workflow Design"],
     },
     {
         id: 2,
-        title: "Frontend Modernisation",
-        description: "Frontend rebuild using Vue 3 + Vite + Astro.",
-        tags: ["Vue 3", "Vite", "Astro", "Laravel"],
+        title: "Subscription Lifecycle Platform",
+        description: "Built a recurring-order subscription system with lifecycle states, skip/reschedule/cancel flows, customer self-service, and order generation logic.",
+        tags: ["Lifecycle Design", "Subscriptions", "eCommerce", "State Management"],
     },
     {
         id: 3,
-        title: "Key Frontend Modules",
-        description: "Mega Menu, Subscription workflow, Customer enquiry module, Collections.",
-        tags: ["Vue 3", "Laravel", "Blade"],
+        title: "Virtual Gift Card System",
+        description: "Built a full-stack gift card platform covering purchase, redemption, validation rules, and backend consistency across orders and transactions.",
+        tags: ["Transactions", "Lifecycle Rules", "Backend", "eCommerce"],
     },
     {
         id: 4,
-        title: "Shopify Websites",
-        description: "Custom Shopify templates.",
-        tags: ["Shopify", "HTML/CSS", "Liquid"],
+        title: "Task Management Platform",
+        description: "Built an internal task platform with recurring tasks, comments, activity logs, notifications, summaries, and analytics for team coordination.",
+        tags: ["Internal Tools", "Notifications", "Analytics", "Workflow"],
+    },
+    {
+        id: 6,
+        title: "Platform Modernisation & Legacy Migration",
+        description: "Modernised legacy storefronts and internal systems into more maintainable architectures while preserving business continuity and production stability.",
+        tags: ["Modernisation", "Migration", "Architecture", "Business Continuity"],
     },
 ];
 
@@ -50,8 +56,8 @@ const personalProjects: FeaturedProject[] = [
         title: "AI-Orchestrated Quant Trading System",
         kicker: "Personal flagship project",
         badge: "OpenClaw x Multi-Agent",
-        description: "Built a real IBKR-connected trading platform while orchestrating AI agents through OpenClaw for planning, implementation, debugging, architecture design, and system review.",
-        tags: ["OpenClaw", "Multi-Agent", "IBKR API", "Trading Systems"],
+        description: "Built a real IBKR-connected trading platform while coordinating AI agents for planning, implementation, testing, debugging, architecture design, and operator-oriented system hardening.",
+        tags: ["OpenClaw", "Multi-Agent", "IBKR API", "Runtime Reliability"],
     },
 ];
 
@@ -93,22 +99,22 @@ export default function FeaturedProjects(): React.JSX.Element {
     return (
         <section className="featured reveal">
             <div className="featured-projects-title">
-                <h2>Portfolio Highlights</h2>
+                <h2>Selected Work</h2>
                 <Link to={`/projects`} className="btn ghost">
                     View All
                 </Link>
             </div>
 
             <FeaturedRow
-                title="Featured Personal Work"
-                intro="Independent systems and AI-assisted engineering projects driven by architecture, experimentation, technical depth, and personal ownership."
+                title="Flagship Personal Project"
+                intro="Independent systems work focused on runtime design, broker integration, AI-assisted engineering workflows, and operator-friendly reliability." 
                 projects={personalProjects}
                 variant="flagship"
             />
 
             <FeaturedRow
-                title="Professional Projects"
-                intro="Selected company-facing systems, storefront work, and internal platforms built for real business operations."
+                title="Commercial Systems & Platforms"
+                intro="Production systems built for real business operations, internal workflows, customer lifecycle management, and architecture modernisation."
                 projects={professionalProjects}
             />
         </section>

@@ -14,11 +14,12 @@ export default function AboutMe(): React.JSX.Element {
       <div className="about-content">
         <h2>About Me</h2>
         <p>
-          I'm a full-stack web developer with 10+ years of experience building and modernising production-level web applications,
-          with a strong passion for vibe coding and building clean, maintainable, and high-performance systems.
+          I’m a senior full-stack engineer focused on operational systems, internal platforms, and AI-assisted engineering workflows.
+          Over the past 10+ years, I’ve built software for real business operations across eCommerce, warehouse, fulfilment,
+          subscriptions, and internal tooling—turning messy workflows into maintainable systems with clear lifecycle rules,
+          reliable integrations, and practical business impact.
         </p>
 
-        {/* Tabs */}
         <div className="about-tabs">
           {['Skills', 'Education', 'Experience'].map(tab => (
             <span
@@ -31,15 +32,14 @@ export default function AboutMe(): React.JSX.Element {
           ))}
         </div>
 
-        {/* Tab Content */}
         {activeTab === 'Skills' && (
           <ul className="about-list">
-            <li><strong>Front-End:</strong> Vue, React, Angular, TypeScript, Tailwind, Astro, Vite, Vuetify, Ant Design</li>
-            <li><strong>Back-End:</strong> Node.js, Python, PHP (Laravel), MySQL, PostgreSQL</li>
-            <li><strong>DevOps:</strong> Docker, Git, Jenkins</li>
-            <li><strong>UX/UI:</strong> Figma, Wireframing, Prototyping</li>
-            <li><strong>AI-Assisted Development Tools:</strong> ChatGPT, Claude, Gemini, Cursor</li>
-            <li><strong>Vibe Coding:</strong> OpenClaw, Antigravity, Codex </li>
+            <li><strong>Frontend:</strong> Vue 2/3, React, Angular, TypeScript, Astro, Vite, Tailwind, Vuetify, Ant Design</li>
+            <li><strong>Backend:</strong> Node.js, PHP/Laravel, Python, MySQL, PostgreSQL, REST APIs</li>
+            <li><strong>Platforms & Integrations:</strong> Shopify, NetSuite ERP, Algolia, Amazon, Braze, Rithum, Primer, Zoho</li>
+            <li><strong>AI / LLM Work:</strong> AI-assisted prototyping, debugging, refactoring, workflow design, automated validation, and agent-based tool orchestration</li>
+            <li><strong>Testing & Automation:</strong> Playwright, browser automation, UI/API/DB validation, structured debugging workflows</li>
+            <li><strong>DevOps:</strong> AWS, Docker, GitHub, Jenkins, CI/CD</li>
           </ul>
         )}
 
@@ -51,7 +51,7 @@ export default function AboutMe(): React.JSX.Element {
 
         {activeTab === 'Experience' && (
           <ul className="about-list">
-            <li>CGA Trading Pty Ltd - Full Stack Developer (2019-Present)</li>
+            <li>CGA Trading Pty Ltd - Full Stack Developer | AI Agent Engineer (2019-Present)</li>
             <li>Deluxe Products Pty Ltd - Full Stack Developer (2015-2019)</li>
           </ul>
         )}

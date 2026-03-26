@@ -37,6 +37,14 @@
     align-items: flex-start;
 }
 
+.hero-desc {
+    max-width: 760px;
+    margin: 1.25rem auto 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
 /* ===== Typing Effect (Minimalist) ===== */
 .animated-role {
     color: var(--accent);

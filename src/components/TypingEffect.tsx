@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const roles: string[] = [
-    "Full-Stack AI Developer",
-    "eCommerce System Builder",
-    "UI / UX Designer",
-    "Warehouse System Architect",
-    "Senior Frontend Engineer",
+    "Senior Full-Stack / Platform Engineer",
+    "Operational Systems Builder",
+    "AI-Assisted Engineering Practitioner",
+    "eCommerce & Workflow Systems Engineer"
 ];
 
 export default function TypingEffect(): React.JSX.Element {
@@ -23,7 +22,7 @@ export default function TypingEffect(): React.JSX.Element {
         } else if (isDeleting && text.length > 0) {
             t = setTimeout(() => setText(role.slice(0, text.length - 1)), speed / 2);
         } else if (!isDeleting && text.length === role.length) {
-            t = setTimeout(() => setIsDeleting(true), 2000); // Pause longer at end
+            t = setTimeout(() => setIsDeleting(true), 2000);
         } else if (isDeleting && text.length === 0) {
             setIsDeleting(false);
             setIndex((index + 1) % roles.length);

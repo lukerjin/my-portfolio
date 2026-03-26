@@ -2,7 +2,6 @@ import React from "react";
 import useReveal from "../hooks/useReveal";
 import FeaturedProjects from "../components/FeaturedProjects";
 import AboutMe from "../components/AboutMe";
-import Tetris from "../components/Tetris";
 import TypingEffect from "../components/TypingEffect";
 import Capabilities from "../components/Capabilities";
 import '../css/Home.css';
@@ -12,22 +11,16 @@ export default function Home(): React.JSX.Element {
 
   return (
     <div className="home">
-      {/* Hero */}
       <section className="hero reveal">
         <TypingEffect />
         <p className="hero-desc">
-          I design and build scalable eCommerce platforms and internal systems used by real businesses.
+          I design and build production systems, internal platforms, and AI-assisted engineering workflows for real business operations.
         </p>
       </section>
-      {/* About Me */}
+
       <AboutMe />
-
-      {/* Capabilities */}
       <Capabilities />
-
-      {/* Featured Project */}
       <FeaturedProjects />
-      <Tetris />
     </div>
   );
 }

@@ -4,10 +4,10 @@ import '../css/Footer.css';
 export default function Footer(): React.JSX.Element {
   return (
     <footer className="footer reveal glass-card">
-      <h2>Let's Connect</h2>
+      <h2>Let’s Connect</h2>
       <p>
-        I'm currently looking for new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        I’m interested in senior full-stack, platform, and AI-assisted engineering roles focused on real systems,
+        operational complexity, and meaningful product impact. If that sounds relevant, feel free to reach out.
       </p>
       <div className="footer-links">
         <a href="mailto:jc.jinwu@gmail.com">Email</a>
