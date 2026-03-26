@@ -35,9 +35,21 @@ export default function ProjectDetail(): React.JSX.Element {
         <section className="project-section project-workflow-section">
           <h2>Operational Workflow</h2>
           <div className="project-workflow-card">
-            {project.workflow.map((line, i) => (
-              <div key={`${line}-${i}`} className="project-workflow-line">{line}</div>
-            ))}
+            {project.workflow.map((line, i) => {
+              const isSeparator = /^-+$/.test(line.trim());
+              const isArrowOnly = /^[│▼↓\s]+$/.test(line.trim());
+              const isSection = line.includes('PHASE') || line.includes('STATE MACHINE') || line.includes('CORE SYSTEM CAPABILITIES') || line.includes('Dashboard');
+              const className = [
+                'project-workflow-line',
+                isSeparator ? 'project-workflow-line--separator' : '',
+                isArrowOnly ? 'project-workflow-line--arrow' : '',
+                isSection ? 'project-workflow-line--section' : ''
+              ].filter(Boolean).join(' ');
+
+              return (
+                <div key={`${line}-${i}`} className={className}>{line}</div>
+              );
+            })}
           </div>
         </section>
       ) : null}

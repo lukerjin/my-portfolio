@@ -67,13 +67,17 @@
   white-space: pre-wrap;
 }
 
-.project-workflow-line:nth-child(9) {
+.project-workflow-line--section {
   color: #0071e3;
   font-weight: 600;
 }
 
-.project-workflow-line:nth-child(10) {
-  color: #52525b;
+.project-workflow-line--arrow {
+  color: #6b7280;
+}
+
+.project-workflow-line--separator {
+  color: #a1a1aa;
 }
 
 .project-links-list {
