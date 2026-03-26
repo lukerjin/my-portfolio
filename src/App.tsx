@@ -16,9 +16,8 @@ function App(): React.JSX.Element {
       <header className="App-header">
         <nav className="nav-links">
           <Link to="/">Home</Link>
-          <Link to="/projects">Portfolio Highlights</Link>
+          <Link to="/projects">Selected Work</Link>
           <Link to="/experience">Experience</Link>
-          <Link to="/education">Education</Link>
         </nav>
       </header>
 

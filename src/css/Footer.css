@@ -1,6 +1,5 @@
 .footer {
   text-align: center;
-  /* margin-top removed to rely on parent flex gap */
 }
 
 .footer h2 {
@@ -11,28 +10,36 @@
 }
 
 .footer p {
-  max-width: 500px;
+  max-width: 640px;
   margin: 0.5rem auto 2rem;
-  line-height: 1.6;
+  line-height: 1.7;
   color: var(--text-muted);
 }
 
 .footer-links {
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .footer-links a {
-  margin: 0 16px;
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .footer-links a:hover {
   color: var(--primary);
-  opacity: 0.8;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .footer-copy {

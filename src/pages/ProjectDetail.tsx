@@ -31,6 +31,40 @@ export default function ProjectDetail(): React.JSX.Element {
         <ul>{project.tech.map((t, i) => <li key={i}>{t}</li>)}</ul>
       </section>
 
+      {project.workflowImage ? (
+        <section className="project-section project-workflow-section">
+          <h2>Operational Workflow</h2>
+          <figure className="project-workflow-image-card">
+            <img src={project.workflowImage.image} alt={project.workflowImage.title} className="project-workflow-image" />
+            <figcaption className="project-workflow-caption">
+              <strong>{project.workflowImage.title}</strong>
+              <span>{project.workflowImage.caption}</span>
+            </figcaption>
+          </figure>
+        </section>
+      ) : project.workflow && project.workflow.length > 0 ? (
+        <section className="project-section project-workflow-section">
+          <h2>Operational Workflow</h2>
+          <div className="project-workflow-card">
+            {project.workflow.map((line, i) => {
+              const isSeparator = /^-+$/.test(line.trim());
+              const isArrowOnly = /^[│▼↓\s]+$/.test(line.trim());
+              const isSection = line.includes('PHASE') || line.includes('STATE MACHINE') || line.includes('CORE SYSTEM CAPABILITIES') || line.includes('Dashboard');
+              const className = [
+                'project-workflow-line',
+                isSeparator ? 'project-workflow-line--separator' : '',
+                isArrowOnly ? 'project-workflow-line--arrow' : '',
+                isSection ? 'project-workflow-line--section' : ''
+              ].filter(Boolean).join(' ');
+
+              return (
+                <div key={`${line}-${i}`} className={className}>{line}</div>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+
       {project.links && project.links.length > 0 ? (
         <section className="project-section project-links-section">
           <h2>Research, Validation & Reports</h2>
