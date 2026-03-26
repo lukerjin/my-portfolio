@@ -31,7 +31,18 @@ export default function ProjectDetail(): React.JSX.Element {
         <ul>{project.tech.map((t, i) => <li key={i}>{t}</li>)}</ul>
       </section>
 
-      {project.workflow && project.workflow.length > 0 ? (
+      {project.workflowImage ? (
+        <section className="project-section project-workflow-section">
+          <h2>Operational Workflow</h2>
+          <figure className="project-workflow-image-card">
+            <img src={project.workflowImage.image} alt={project.workflowImage.title} className="project-workflow-image" />
+            <figcaption className="project-workflow-caption">
+              <strong>{project.workflowImage.title}</strong>
+              <span>{project.workflowImage.caption}</span>
+            </figcaption>
+          </figure>
+        </section>
+      ) : project.workflow && project.workflow.length > 0 ? (
         <section className="project-section project-workflow-section">
           <h2>Operational Workflow</h2>
           <div className="project-workflow-card">

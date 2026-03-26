@@ -20,6 +20,7 @@ export interface Project {
     contribution: string[];
     outcome: string[];
     workflow?: string[];
+    workflowImage?: ProjectAsset;
     assets?: ProjectAsset[];
     links?: ProjectLink[];
 }
@@ -61,18 +62,11 @@ const projectDetails: ProjectDetails = {
             "User access, permissions, and staff workflow support",
             "Integration into a broader admin system for operational visibility"
         ],
-        workflow: [
-            "供应商 → 条码生成 → 打标签 → 入库(托盘/库位)",
-            "↓",
-            "库存盘点(差异检测)",
-            "↓",
-            "订单到来 → 拣货扫码 → 库存扣减 → 发货",
-            "↓",
-            "异常退货 → 退货批次 → 物流回流",
-            "↓    ↓    ↓",
-            "━━━━━━━━━━ 报表监控 Dashboard ━━━━━━━━━━",
-            "(托盘报表 / 库存水位 / 盘点进度 / 拣货日志 / 退货统计)"
-        ],
+        workflowImage: {
+            title: "Warehouse Operational Workflow",
+            image: "/my-portfolio/assets/wms/operational-workflow.png",
+            caption: "End-to-end warehouse workflow covering inbound receiving, barcode generation, labelling, pallet/rack storage, inventory audit, order picking, stock deduction, shipping, and returns processing with logistics return handling."
+        },
         tech: ["Vue 2", "Laravel", "MySQL", "REST APIs", "Operational Tooling"],
         contribution: [
             "Designed the system around real warehouse operations rather than abstract features",
