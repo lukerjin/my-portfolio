@@ -83,18 +83,24 @@ const projectDetails: ProjectDetails = {
     },
     2: {
         title: "Subscription Lifecycle Platform",
-        overview: "Built a subscription system supporting recurring orders, flexible scheduling, and customer self-service management. The project was not just about adding a checkout option; it required clear lifecycle states, reliable order generation logic, and user-facing controls for skip, reschedule, and cancellation flows while keeping backend behavior consistent and predictable.",
+        overview: "Built a subscription system supporting recurring orders, flexible scheduling, and customer self-service management. The project was not just about adding a checkout option; it required clear lifecycle states, reliable order generation logic, scheduled processing, payment handling, and user-facing controls for frequency changes, pause/cancel flows, and immediate order requests while keeping backend behavior consistent and predictable.",
         features: [
             "Recurring order support with scheduled generation workflows",
-            "Skip, reschedule, and cancel flows for customer self-service",
+            "Skip, reschedule, pause, and cancel flows for customer self-service",
             "Subscription lifecycle states and transition rules",
             "Backend order generation aligned with customer-facing controls",
             "Administrative visibility into subscription activity and state"
         ],
+        workflowImage: {
+            title: "Subscription Lifecycle Workflow",
+            image: "/my-portfolio/assets/subscription/lifecycle-workflow.png",
+            caption: "Subscription flow covering creation, secure payment setup, automated recurring-order generation, and subscriber self-service management including frequency updates, pause/cancel actions, and immediate-order requests."
+        },
         tech: ["Vue", "Laravel", "MySQL", "eCommerce Systems", "State Management"],
         contribution: [
             "Designed subscription lifecycle rules and state transitions",
             "Built the frontend and backend workflows supporting customer self-service",
+            "Implemented scheduled order generation and payment-driven recurring processing",
             "Ensured recurring order generation behaved consistently across subscription states",
             "Handled the complexity of lifecycle logic in a production eCommerce setting"
         ],

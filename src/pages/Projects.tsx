@@ -18,24 +18,24 @@ const flagshipProjects: ProjectSummary[] = [
 
 const commercialSystems: ProjectSummary[] = [
   {
-    id: 0,
-    title: "AI-Assisted Testing & Debugging Workflows",
-    short: "Built AI-assisted workflows for issue detection, root-cause analysis, fix iteration, and structured validation across UI, API, and database layers."
-  },
-  {
-    id: 1,
-    title: "Warehouse Management System",
-    short: "Designed and built a custom internal WMS covering inventory, picking, packing, shipping, and staff workflow operations."
-  },
-  {
     id: 2,
     title: "Subscription Lifecycle Platform",
-    short: "Built a recurring-order subscription system with skip/reschedule/cancel flows, lifecycle states, self-service management, and order generation logic."
+    short: "Built a recurring-order subscription system with lifecycle states, scheduled processing, self-service management, and reliable order generation logic."
   },
   {
     id: 3,
     title: "Virtual Gift Card System",
-    short: "Built a full-stack gift card platform with purchase, redemption, validation rules, and consistency across orders and transactions."
+    short: "Built a full-stack gift card platform with purchase, activation, redemption, stored-value balance tracking, and consistency across orders and transactions."
+  },
+  {
+    id: 1,
+    title: "Warehouse Management System",
+    short: "Designed and built a custom internal WMS covering inbound receiving, inventory, picking, packing, shipping, returns, and staff workflow operations."
+  },
+  {
+    id: 0,
+    title: "AI-Assisted Testing & Debugging Workflows",
+    short: "Built AI-assisted workflows for issue detection, root-cause analysis, fix iteration, and structured validation across UI, API, and database layers."
   },
   {
     id: 4,

@@ -13,28 +13,28 @@ interface FeaturedProject {
 
 const professionalProjects: FeaturedProject[] = [
     {
-        id: 0,
-        title: "AI-Assisted Testing & Debugging Workflows",
-        description: "Built AI-assisted engineering workflows for issue detection, root-cause analysis, fix iteration, and structured validation across UI, backend, and database layers.",
-        tags: ["AI Engineering", "Testing", "Debugging", "Validation"],
-    },
-    {
-        id: 1,
-        title: "Warehouse Management System",
-        description: "Designed and built a custom internal WMS covering labelling, picking, shipping, inventory, and staff workflows for day-to-day operations.",
-        tags: ["Operational Systems", "Vue", "Laravel", "Workflow Design"],
-    },
-    {
         id: 2,
         title: "Subscription Lifecycle Platform",
-        description: "Built a recurring-order subscription system with lifecycle states, skip/reschedule/cancel flows, customer self-service, and order generation logic.",
+        description: "Built a recurring-order subscription system with lifecycle states, scheduled processing, customer self-service, and reliable order generation logic.",
         tags: ["Lifecycle Design", "Subscriptions", "eCommerce", "State Management"],
     },
     {
         id: 3,
         title: "Virtual Gift Card System",
-        description: "Built a full-stack gift card platform covering purchase, redemption, validation rules, and backend consistency across orders and transactions.",
-        tags: ["Transactions", "Lifecycle Rules", "Backend", "eCommerce"],
+        description: "Built a full-stack gift card platform covering purchase, activation, redemption, stored-value balance tracking, and backend consistency across orders and transactions.",
+        tags: ["Transactions", "Lifecycle Rules", "Stored Value", "eCommerce"],
+    },
+    {
+        id: 1,
+        title: "Warehouse Management System",
+        description: "Designed and built a custom internal WMS covering inbound receiving, labelling, picking, shipping, inventory, returns, and staff workflows for day-to-day operations.",
+        tags: ["Operational Systems", "Vue", "Laravel", "Workflow Design"],
+    },
+    {
+        id: 0,
+        title: "AI-Assisted Testing & Debugging Workflows",
+        description: "Built AI-assisted engineering workflows for issue detection, root-cause analysis, fix iteration, and structured validation across UI, backend, and database layers.",
+        tags: ["AI Engineering", "Testing", "Debugging", "Validation"],
     },
     {
         id: 4,
