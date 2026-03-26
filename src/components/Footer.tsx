@@ -11,6 +11,7 @@ export default function Footer(): React.JSX.Element {
       </p>
       <div className="footer-links">
         <a href="mailto:jc.jinwu@gmail.com">Email</a>
+        <a href="https://github.com/lukerjin" target="_blank" rel="noreferrer">GitHub</a>
       </div>
       <p className="footer-copy">&copy; {new Date().getFullYear()} Jin Wu. All rights reserved.</p>
     </footer>

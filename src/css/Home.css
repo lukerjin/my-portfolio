@@ -3,14 +3,13 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    /* Consistent spacing between sections */
     padding: 2rem 0;
 }
 
 /* ===== Hero ===== */
 .hero {
     text-align: center;
-    max-width: 800px;
+    max-width: 880px;
     margin: 0 auto;
     padding: 3rem 0 1.5rem;
 }
@@ -31,7 +30,6 @@
 
 .hero-role-container {
     min-height: 2.3em;
-    /* Reserve space for exactly 2 lines of role text if it wraps */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -45,12 +43,53 @@
     color: var(--text-muted);
 }
 
-/* ===== Typing Effect (Minimalist) ===== */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.hero-actions .btn {
+    min-width: 170px;
+    text-align: center;
+}
+
+/* ===== Proof Grid ===== */
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.proof-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px) saturate(140%);
+    border-radius: 22px;
+    padding: 1.35rem 1.3rem;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+}
+
+.proof-card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.55rem;
+    color: var(--primary);
+}
+
+.proof-card p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.65;
+    font-size: 0.96rem;
+}
+
+/* ===== Typing Effect ===== */
 .animated-role {
     color: var(--accent);
     font-weight: 600;
     display: inline;
-    /* Changed to inline for natural wrapping within the container */
 }
 
 .cursor {
@@ -62,7 +101,6 @@
 }
 
 @keyframes blink {
-
     0%,
     100% {
         opacity: 1;
@@ -70,5 +108,12 @@
 
     50% {
         opacity: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-actions .btn {
+        width: 100%;
+        min-width: 0;
     }
 }
