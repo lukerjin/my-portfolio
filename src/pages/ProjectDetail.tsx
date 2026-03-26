@@ -31,6 +31,17 @@ export default function ProjectDetail(): React.JSX.Element {
         <ul>{project.tech.map((t, i) => <li key={i}>{t}</li>)}</ul>
       </section>
 
+      {project.workflow && project.workflow.length > 0 ? (
+        <section className="project-section project-workflow-section">
+          <h2>Operational Workflow</h2>
+          <div className="project-workflow-card">
+            {project.workflow.map((line, i) => (
+              <div key={`${line}-${i}`} className="project-workflow-line">{line}</div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       {project.links && project.links.length > 0 ? (
         <section className="project-section project-links-section">
           <h2>Research, Validation & Reports</h2>

@@ -19,6 +19,7 @@ export interface Project {
     tech: string[];
     contribution: string[];
     outcome: string[];
+    workflow?: string[];
     assets?: ProjectAsset[];
     links?: ProjectLink[];
 }
@@ -51,24 +52,38 @@ const projectDetails: ProjectDetails = {
     },
     1: {
         title: "Warehouse Management System",
-        overview: "Designed and fully developed a custom Warehouse Management System for internal staff operations. The system was built around real warehouse workflows rather than generic admin CRUD, covering inventory handling, stocktaking, picking, packing, shipping, labelling, and user workflow management. It later became integrated into a broader Vue-based admin platform to improve maintainability and long-term scalability.",
+        overview: "Designed and fully developed a custom Warehouse Management System for internal staff operations. The system was built around real warehouse workflows rather than generic admin CRUD, covering inventory handling, stocktaking, picking, packing, shipping, labelling, returns, and user workflow management. It later became integrated into a broader Vue-based admin platform to improve maintainability and long-term scalability.",
         features: [
             "Inventory, stocktaking, and transfer workflows",
             "Labelling and printing support for warehouse operations",
             "Picking, packing, and shipping flows for daily fulfilment",
+            "Return handling and batch-based reverse logistics support",
             "User access, permissions, and staff workflow support",
             "Integration into a broader admin system for operational visibility"
+        ],
+        workflow: [
+            "供应商 → 条码生成 → 打标签 → 入库(托盘/库位)",
+            "↓",
+            "库存盘点(差异检测)",
+            "↓",
+            "订单到来 → 拣货扫码 → 库存扣减 → 发货",
+            "↓",
+            "异常退货 → 退货批次 → 物流回流",
+            "↓    ↓    ↓",
+            "━━━━━━━━━━ 报表监控 Dashboard ━━━━━━━━━━",
+            "(托盘报表 / 库存水位 / 盘点进度 / 拣货日志 / 退货统计)"
         ],
         tech: ["Vue 2", "Laravel", "MySQL", "REST APIs", "Operational Tooling"],
         contribution: [
             "Designed the system around real warehouse operations rather than abstract features",
             "Built both frontend and backend for the full workflow lifecycle",
             "Translated operational pain points into scalable internal tooling",
-            "Integrated the warehouse platform into a larger admin environment"
+            "Integrated the warehouse platform into a larger admin environment",
+            "Connected inventory, picking, shipping, returns, and reporting into one operator-friendly workflow"
         ],
         outcome: [
             "Delivered a production internal system used for day-to-day warehouse operations",
-            "Improved operational efficiency across labelling, picking, shipping, and inventory management",
+            "Improved operational efficiency across labelling, picking, shipping, inventory management, and returns handling",
             "Created a scalable base for further workflow and admin platform improvements"
         ]
     },
