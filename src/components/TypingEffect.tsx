@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const roles: string[] = [
-    "Senior Full-Stack / Platform Engineer",
-    "Operational Systems Builder",
-    "AI-Assisted Engineering Practitioner",
-    "eCommerce & Workflow Systems Engineer"
+    "Senior Full-Stack Engineer",
+    "AI Agent Engineer",
+    "eCommerce & Workflow Systems Engineer",
+    "Game Systems Developer",
 ];
 
 export default function TypingEffect(): React.JSX.Element {

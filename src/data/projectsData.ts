@@ -36,7 +36,7 @@ const projectDetails: ProjectDetails = {
             "Browser automation and DOM-level inspection for repeatable debugging flows",
             "Playwright-assisted end-to-end checks for higher confidence in fixes"
         ],
-        tech: ["Playwright", "OpenClaw", "AI-Assisted Engineering", "Browser Automation", "Validation Workflows"],
+        tech: ["Playwright", "Claude Code", "AI-Assisted Engineering", "Browser Automation", "Validation Workflows"],
         contribution: [
             "Designed practical AI-assisted debugging workflows instead of relying on one-off prompts",
             "Used automation to inspect browser state, reproduce issues, and validate fixes more consistently",
